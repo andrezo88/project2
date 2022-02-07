@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom"
 import LogoBrand from "../images/LogoBrand.svg"
+import { GetCity } from "./GetCity"
 
 export const HomePage = () => {
 
@@ -14,6 +15,7 @@ export const HomePage = () => {
                 <Link to="/favorite-cities">Favorite Cities</Link>
                 <Link to="/about"><img alt="Logo Sobre" />SOBRE</Link>
                 <p>V1 IO FORECAST - PRODUZIDO POR ANDRÉ AUGUSTO E LUCAS SALOMÃO.</p>
+                <GetCity id={"Portland"}/>
             </div>
         </>
     )

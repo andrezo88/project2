@@ -1,0 +1,253 @@
+{"cidades":[
+    {
+        "location": {
+            "name": "Portland",
+            "region": "",
+            "country": "Guadeloupe",
+            "lat": 16.32,
+            "lon": -61.32,
+            "tz_id": "America/Guadeloupe",
+            "localtime_epoch": 1644086233,
+            "localtime": "2022-02-05 14:37"
+        },
+        "current": {
+            "last_updated_epoch": 1644085800,
+            "last_updated": "2022-02-05 14:30",
+            "temp_c": 26.0,
+            "temp_f": 78.8,
+            "is_day": 1,
+            "condition": {
+                "text": "Partly cloudy",
+                "icon": "//cdn.weatherapi.com/weather/64x64/day/116.png",
+                "code": 1003
+            },
+            "wind_mph": 10.5,
+            "wind_kph": 16.9,
+            "wind_degree": 70,
+            "wind_dir": "ENE",
+            "pressure_mb": 1013.0,
+            "pressure_in": 29.91,
+            "precip_mm": 0.5,
+            "precip_in": 0.02,
+            "humidity": 79,
+            "cloud": 75,
+            "feelslike_c": 27.7,
+            "feelslike_f": 81.8,
+            "vis_km": 10.0,
+            "vis_miles": 6.0,
+            "uv": 6.0,
+            "gust_mph": 12.3,
+            "gust_kph": 19.8
+        }
+    },
+
+    {
+        "location": {
+            "name": "New York",
+            "region": "New York",
+            "country": "United States of America",
+            "lat": 40.71,
+            "lon": -74.01,
+            "tz_id": "America/New_York",
+            "localtime_epoch": 1644086308,
+            "localtime": "2022-02-05 13:38"
+        },
+        "current": {
+            "last_updated_epoch": 1644085800,
+            "last_updated": "2022-02-05 13:30",
+            "temp_c": -2.2,
+            "temp_f": 28.0,
+            "is_day": 1,
+            "condition": {
+                "text": "Partly cloudy",
+                "icon": "//cdn.weatherapi.com/weather/64x64/day/116.png",
+                "code": 1003
+            },
+            "wind_mph": 23.0,
+            "wind_kph": 37.1,
+            "wind_degree": 320,
+            "wind_dir": "NW",
+            "pressure_mb": 1025.0,
+            "pressure_in": 30.28,
+            "precip_mm": 0.0,
+            "precip_in": 0.0,
+            "humidity": 50,
+            "cloud": 50,
+            "feelslike_c": -9.0,
+            "feelslike_f": 15.8,
+            "vis_km": 16.0,
+            "vis_miles": 9.0,
+            "uv": 2.0,
+            "gust_mph": 19.2,
+            "gust_kph": 31.0
+        }
+    },
+
+    {
+        "location": {
+            "name": "Brisbane",
+            "region": "Queensland",
+            "country": "Australia",
+            "lat": -27.5,
+            "lon": 153.02,
+            "tz_id": "Australia/Brisbane",
+            "localtime_epoch": 1644086335,
+            "localtime": "2022-02-06 4:38"
+        },
+        "current": {
+            "last_updated_epoch": 1644085800,
+            "last_updated": "2022-02-06 04:30",
+            "temp_c": 19.0,
+            "temp_f": 66.2,
+            "is_day": 0,
+            "condition": {
+                "text": "Light rain",
+                "icon": "//cdn.weatherapi.com/weather/64x64/night/296.png",
+                "code": 1183
+            },
+            "wind_mph": 8.1,
+            "wind_kph": 13.0,
+            "wind_degree": 190,
+            "wind_dir": "S",
+            "pressure_mb": 1012.0,
+            "pressure_in": 29.88,
+            "precip_mm": 0.1,
+            "precip_in": 0.0,
+            "humidity": 83,
+            "cloud": 100,
+            "feelslike_c": 19.0,
+            "feelslike_f": 66.2,
+            "vis_km": 10.0,
+            "vis_miles": 6.0,
+            "uv": 1.0,
+            "gust_mph": 16.3,
+            "gust_kph": 26.3
+        }
+    },
+
+    {
+        "location": {
+            "name": "Porto Velho",
+            "region": "Rondonia",
+            "country": "Brazil",
+            "lat": -8.77,
+            "lon": -63.9,
+            "tz_id": "America/Porto_Velho",
+            "localtime_epoch": 1644086181,
+            "localtime": "2022-02-05 14:36"
+        },
+        "current": {
+            "last_updated_epoch": 1644085800,
+            "last_updated": "2022-02-05 14:30",
+            "temp_c": 29.0,
+            "temp_f": 84.2,
+            "is_day": 1,
+            "condition": {
+                "text": "Partly cloudy",
+                "icon": "//cdn.weatherapi.com/weather/64x64/day/116.png",
+                "code": 1003
+            },
+            "wind_mph": 4.3,
+            "wind_kph": 6.8,
+            "wind_degree": 330,
+            "wind_dir": "NNW",
+            "pressure_mb": 1011.0,
+            "pressure_in": 29.85,
+            "precip_mm": 0.0,
+            "precip_in": 0.0,
+            "humidity": 66,
+            "cloud": 75,
+            "feelslike_c": 35.0,
+            "feelslike_f": 95.0,
+            "vis_km": 10.0,
+            "vis_miles": 6.0,
+            "uv": 7.0,
+            "gust_mph": 4.7,
+            "gust_kph": 7.6
+        }
+    },
+
+    {
+        "location": {
+            "name": "Sao Paulo",
+            "region": "Sao Paulo",
+            "country": "Brazil",
+            "lat": -23.53,
+            "lon": -46.62,
+            "tz_id": "America/Sao_Paulo",
+            "localtime_epoch": 1644086380,
+            "localtime": "2022-02-05 15:39"
+        },
+        "current": {
+            "last_updated_epoch": 1644085800,
+            "last_updated": "2022-02-05 15:30",
+            "temp_c": 28.0,
+            "temp_f": 82.4,
+            "is_day": 1,
+            "condition": {
+                "text": "Partly cloudy",
+                "icon": "//cdn.weatherapi.com/weather/64x64/day/116.png",
+                "code": 1003
+            },
+            "wind_mph": 13.6,
+            "wind_kph": 22.0,
+            "wind_degree": 270,
+            "wind_dir": "W",
+            "pressure_mb": 1011.0,
+            "pressure_in": 29.85,
+            "precip_mm": 0.5,
+            "precip_in": 0.02,
+            "humidity": 58,
+            "cloud": 50,
+            "feelslike_c": 34.3,
+            "feelslike_f": 93.8,
+            "vis_km": 10.0,
+            "vis_miles": 6.0,
+            "uv": 5.0,
+            "gust_mph": 10.5,
+            "gust_kph": 16.9
+        }
+    },
+
+    {
+        "location": {
+            "name": "Cascavel",
+            "region": "Parana",
+            "country": "Brazil",
+            "lat": -24.95,
+            "lon": -53.47,
+            "tz_id": "America/Sao_Paulo",
+            "localtime_epoch": 1644086401,
+            "localtime": "2022-02-05 15:40"
+        },
+        "current": {
+            "last_updated_epoch": 1644085800,
+            "last_updated": "2022-02-05 15:30",
+            "temp_c": 22.0,
+            "temp_f": 71.6,
+            "is_day": 1,
+            "condition": {
+                "text": "Partly cloudy",
+                "icon": "//cdn.weatherapi.com/weather/64x64/day/116.png",
+                "code": 1003
+            },
+            "wind_mph": 9.4,
+            "wind_kph": 15.1,
+            "wind_degree": 270,
+            "wind_dir": "W",
+            "pressure_mb": 1012.0,
+            "pressure_in": 29.88,
+            "precip_mm": 0.6,
+            "precip_in": 0.02,
+            "humidity": 83,
+            "cloud": 75,
+            "feelslike_c": 24.6,
+            "feelslike_f": 76.2,
+            "vis_km": 10.0,
+            "vis_miles": 6.0,
+            "uv": 5.0,
+            "gust_mph": 13.0,
+            "gust_kph": 20.9
+        }
+    }]
+}
