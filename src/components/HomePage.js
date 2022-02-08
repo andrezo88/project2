@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import LogoBrand from "../images/LogoBrand.svg";
 import LogoInformation from "../images/LogoInformation.svg";
+import { CityId } from "./CityId"
 import "./HomePage.css"
 
 export const HomePage = () => {
@@ -8,22 +9,23 @@ export const HomePage = () => {
     return (
         <>
             <div className="container">
-
                 <img src={LogoBrand} alt="Logo Brand" className="mx-auto d-block" style={{ marginTop: "150px" }} />
                 <h1 className="text-center">Io Forecast</h1>
                 <h3 className="text-center">Descrição</h3>
 
-                <div className="rounded border border-dark" style={{ marginLeft: "250px", marginRight: "250px", backgroundColor: "white" }}>
-                    <div className="input-group mb-3 mx-auto mt-5" style={{ width: "500px", paddingBottom: "25px", backgroundColor: "white" }}>
-                        <input type="text" className="form-control " placeholder="Type City name"
-                            aria-label="Type city name" aria-describedby="basic-addon2" />
-                        <div className="input-group-append">
-                            <Link to={`/NavBar`}>
-                                <button className="btn btn-outline-dark " type="button">Search</button>
-                            </Link>
+                <form action="/CityId" method="get">
+                    <div className="rounded border border-dark" style={{ marginLeft: "250px", marginRight: "250px", backgroundColor: "white" }}>
+                        <div className="input-group mb-3 mx-auto mt-5" style={{ width: "500px", paddingBottom: "25px", backgroundColor: "white" }}>
+                            <input type="text" className="form-control " placeholder="Type City name"
+                                aria-label="Type city name" aria-describedby="basic-addon2" />
+                            <div className="input-group-append">
+                                <Link to={`/CityId`}>
+                                    <button className="btn btn-outline-dark " type="button">Search</button>
+                                </Link>
+                            </div>
                         </div>
                     </div>
-                </div>
+                </form>
 
 
                 <div className="d-flex justify-content-center">
@@ -36,7 +38,7 @@ export const HomePage = () => {
                 </div>
             </div >
 
-            <div class="container">
+            <div className="container">
                 <footer className="py-3 my-4">
                     <ul className="nav justify-content-center border-bottom pb-3 mb-3 ">
                         <Link to="/about" className="text-dark text-opacity-50 text-center " style={{ textDecoration: "none" }}>
