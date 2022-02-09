@@ -4,20 +4,17 @@ import getAPI from "./GetWeatherAPI";
 
 export const CityData = ({ id, submitStatus }) => {
 
-    let chosenCity = id
-
     const [cityData, setCityData] = useState("")
 
-    const getCity = async () => {
-        const data = await getAPI.getWeatherData(chosenCity)
-        setCityData(data)
-    }
-
     useEffect(() => {
+        const getCity = async () => {
+            const data = await getAPI.getWeatherData(id)
+            setCityData(data)
+        }
         if ((id !== "")) {
             getCity()
         }
-    }, [submitStatus])
+    }, [submitStatus, id])
 
     return (
         <>
