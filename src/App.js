@@ -2,7 +2,6 @@ import './App.css';
 import { HomePage } from './components/HomePage';
 import { Routes, Route } from 'react-router-dom'
 //import { NavBar } from './components/NavBar';
-import { AllCities } from './components/GetCity';
 
 function App() {
   return (

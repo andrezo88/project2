@@ -1,6 +1,5 @@
 import axios from "axios";
 
-
 class getAPI {
     constructor() {
         this.api = axios.create({
@@ -8,12 +7,13 @@ class getAPI {
         })
     }
 
-    getOneCity = async (id) => {
+    getWeatherData = async (cityID) => {
         try {
             const { data } = await this.api.get(`/`)
-            return data[0]
+            const cityData = data.find(city => city.location.name === cityID)
+            return cityData
         } catch (error) {
-            throw new Error(`Não pegou a cidade ${id}`)
+            throw new Error(`Não pegou a cidade ${cityID}`)
         }
     }
 
