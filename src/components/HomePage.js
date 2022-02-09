@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import LogoBrand from "../images/LogoBrand.svg";
 import LogoInformation from "../images/LogoInformation.svg";
-import { CityId } from "./CityId"
+import { NavBar } from "./NavBar";
 import "./HomePage.css"
 
 export const HomePage = () => {
@@ -13,24 +13,11 @@ export const HomePage = () => {
                 <h1 className="text-center">Io Forecast</h1>
                 <h3 className="text-center">Descrição</h3>
 
-                <form action="/CityId" method="get">
-                    <div className="rounded border border-dark" style={{ marginLeft: "250px", marginRight: "250px", backgroundColor: "white" }}>
-                        <div className="input-group mb-3 mx-auto mt-5" style={{ width: "500px", paddingBottom: "25px", backgroundColor: "white" }}>
-                            <input type="text" className="form-control " placeholder="Type City name"
-                                aria-label="Type city name" aria-describedby="basic-addon2" />
-                            <div className="input-group-append">
-                                <Link to={`/CityId`}>
-                                    <button className="btn btn-outline-dark " type="button">Search</button>
-                                </Link>
-                            </div>
-                        </div>
-                    </div>
-                </form>
-
+                <NavBar />
 
                 <div className="d-flex justify-content-center">
                     <div>
-                        <Link to="/city/:id" className="btn btn-outline-dark mt-5">City Weather</Link>
+                        <Link to="/CityId" className="btn btn-outline-dark mt-5">City Weather</Link>
                     </div>
                     <div>
                         <Link to="/favorite-cities" className="btn btn-outline-dark mt-5 ms-5 ">Favorite Cities</Link>
