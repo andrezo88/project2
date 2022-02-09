@@ -1,10 +1,10 @@
-import { useState , useEffect } from "react"
+import { useState, useEffect } from "react"
 import { useParams } from "react-router-dom"
 import getAPI from "./GetWeatherAPI";
 
-export const CityData = ({id, submitStatus}) => {
+export const CityData = ({ id, submitStatus }) => {
 
-    let chosenCity = id 
+    let chosenCity = id
 
     const [cityData, setCityData] = useState("")
 
@@ -13,11 +13,11 @@ export const CityData = ({id, submitStatus}) => {
         setCityData(data)
     }
 
-    useEffect(()=>{
-        if ((id!="")){
+    useEffect(() => {
+        if ((id !== "")) {
             getCity()
         }
-    },[submitStatus])
+    }, [submitStatus])
 
     return (
         <>
@@ -25,14 +25,14 @@ export const CityData = ({id, submitStatus}) => {
             <div>
                 {cityData && cityData.location.name}
             </div>
-            <div>    
+            <div>
                 {cityData && cityData.location.country}
             </div>
-            <div>    
+            <div>
                 {cityData && cityData.current.temp_c} C
             </div>
-            <div>    
-                {cityData && <img src={cityData.current.condition.icon}/>}  
+            <div>
+                {cityData && <img src={cityData.current.condition.icon} alt="icon weather" />}
                 {cityData && cityData.current.condition.text}
             </div>
             <div>
@@ -44,7 +44,7 @@ export const CityData = ({id, submitStatus}) => {
             <div>
                 {cityData && cityData.astro.sunrise}
             </div>
-            <div>    
+            <div>
                 {cityData && cityData.astro.sunset}
             </div>
         </>
