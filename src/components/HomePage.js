@@ -1,9 +1,23 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import LogoBrand from "../images/LogoBrand.svg";
 import LogoInformation from "../images/LogoInformation.svg";
 import "./HomePage.css"
 
+import { CityData } from "./CurrentWeather"
+
 export const HomePage = () => {
+
+    const [city,setCity] = useState("")
+    const [submit,setSubmit] = useState()
+
+    const handleChange = (e) => {
+        (e && setCity(e.target.value))
+    }
+
+    const handleClick = async () => {
+        setSubmit(!submit)
+    }
 
     return (
         <>
@@ -16,11 +30,11 @@ export const HomePage = () => {
                 <div className="rounded border border-dark" style={{ marginLeft: "300px", marginRight: "300px", backgroundColor: "white" }}>
                     <div className="input-group mb-3 mx-auto mt-5" style={{ width: "500px", paddingBottom: "25px", backgroundColor: "white" }}>
                         <input type="text" className="form-control " placeholder="Type City name"
-                            aria-label="Type city name" aria-describedby="basic-addon2" />
+                            aria-label="Type city name" aria-describedby="basic-addon2" onChange={handleChange}/>
                         <div className="input-group-append">
-                            <Link to={`/NavBar`}>
-                                <button className="btn btn-outline-dark " type="button">Search</button>
-                            </Link>
+                            {/* <Link to={`/NavBar`}> */}
+                            <button className="btn btn-outline-dark " type="button" onClick={handleClick}>Search</button>
+                            {/* </Link> */}
                         </div>
                     </div>
                 </div>
@@ -36,7 +50,11 @@ export const HomePage = () => {
                 </div>
             </div >
 
-            <div class="container">
+            <div>
+                <CityData id={city} submitStatus={submit}/>
+            </div>
+
+            <div className="container">
                 <footer className="py-3 my-4">
                     <ul className="nav justify-content-center border-bottom pb-3 mb-3 ">
                         <Link to="/about" className="text-dark text-opacity-50 text-center " style={{ textDecoration: "none" }}>
