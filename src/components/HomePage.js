@@ -1,10 +1,23 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import LogoBrand from "../images/LogoBrand.svg";
 import LogoInformation from "../images/LogoInformation.svg";
-import { NavBar } from "./NavBar";
 import "./HomePage.css"
 
+import { CityData } from "./CurrentWeather"
+
 export const HomePage = () => {
+
+    const [city, setCity] = useState("")
+    const [submit, setSubmit] = useState()
+
+    const handleChange = (e) => {
+        (e && setCity(e.target.value))
+    }
+
+    const handleClick = async () => {
+        setSubmit(!submit)
+    }
 
     return (
         <>
@@ -13,17 +26,32 @@ export const HomePage = () => {
                 <h1 className="text-center">Io Forecast</h1>
                 <h3 className="text-center">Descrição</h3>
 
-                <NavBar />
+                <div className="rounded border border-dark" style={{ marginLeft: "300px", marginRight: "300px", backgroundColor: "white" }}>
+                    <div className="input-group mb-3 mx-auto mt-5" style={{ width: "500px", paddingBottom: "25px", backgroundColor: "white" }}>
+                        <input type="text" className="form-control " placeholder="Type City name"
+                            aria-label="Type city name" aria-describedby="basic-addon2" onChange={handleChange} />
+                        <div className="input-group-append">
+                            {/* <Link to={`/NavBar`}> */}
+                            <button className="btn btn-outline-dark " type="button" onClick={handleClick}>Search</button>
+                            {/* </Link> */}
+                        </div>
+                    </div>
+                </div>
+
 
                 <div className="d-flex justify-content-center">
                     <div>
-                        <Link to="/CityId" className="btn btn-outline-dark mt-5">City Weather</Link>
+                        <Link to="/city/:id" className="btn btn-outline-dark mt-5">City Weather</Link>
                     </div>
                     <div>
                         <Link to="/favorite-cities" className="btn btn-outline-dark mt-5 ms-5 ">Favorite Cities</Link>
                     </div>
                 </div>
             </div >
+
+            <div>
+                <CityData id={city} submitStatus={submit} />
+            </div>
 
             <div className="container">
                 <footer className="py-3 my-4">
