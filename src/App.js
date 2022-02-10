@@ -1,8 +1,7 @@
 import './App.css';
 import { HomePage } from './components/HomePage';
 import { Routes, Route } from "react-router-dom";
-import { NavBar } from "./components/NavBar";
-import { CityId } from "./components/CityId";
+import { CityDetails } from "./components/CityDetails";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
@@ -11,7 +10,7 @@ function App() {
 
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route path="/CityId" element={<CityId />} />
+        <Route path="/CityDetails" element={<CityDetails />} />
       </Routes>
 
     </div>

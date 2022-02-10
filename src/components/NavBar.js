@@ -3,14 +3,12 @@ import LogoBrand from "../images/LogoBrand.svg";
 import { useState } from "react";
 
 
-export const NavBar = () => {
-
-    const [getName, setGetName] = useState();
+export const NavBar = ({ onChange }) => {
 
     return (
 
         <>
-            <div style={{ backgroundColor: "white" }}>
+            <div style={{ backgroundColor: "white" }} className="col-md-auto" >
                 <div className="rounded border border-dark" style={{ marginLeft: "250px", marginRight: "250px", backgroundColor: "white" }}>
                     <div className="d-flex">
                         <Link to={"/"}>
@@ -18,10 +16,12 @@ export const NavBar = () => {
                         </Link>
                         <div className="input-group mb-3 mx-auto mt-5" style={{ width: "500px", paddingBottom: "25px", backgroundColor: "white" }}>
                             <input type="text" className="form-control " placeholder="Type City name"
-                                aria-label="Type city name" aria-describedby="basic-addon2" />
+                                aria-label="Type city name" aria-describedby="basic-addon2"
+                                onChange={onChange}
+                            />
                             <div className="input-group-append">
-                                <Link to={`/CityID`}>
-                                    <button className="btn btn-outline-dark " type="button">Search</button>
+                                <Link to={`/CityDetails`}>
+                                    <button className="btn btn-outline-dark " type="button"  >Search</button>
                                 </Link>
                             </div>
                         </div>

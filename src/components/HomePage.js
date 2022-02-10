@@ -1,10 +1,11 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import LogoBrand from "../images/LogoBrand.svg";
 import LogoInformation from "../images/LogoInformation.svg";
 import "./HomePage.css"
 
 import { CityData } from "./CurrentWeather"
+import { NavBar } from "./NavBar";
 
 export const HomePage = () => {
 
@@ -17,26 +18,17 @@ export const HomePage = () => {
 
     const handleClick = async () => {
         setSubmit(!submit)
+        console.log("aqui")
     }
 
     return (
         <>
-            <div className="container">
-                <img src={LogoBrand} alt="Logo Brand" className="mx-auto d-block" style={{ marginTop: "150px" }} />
-                <h1 className="text-center">Io Forecast</h1>
-                <h3 className="text-center">Descrição</h3>
 
-                <div className="rounded border border-dark" style={{ marginLeft: "300px", marginRight: "300px", backgroundColor: "white" }}>
-                    <div className="input-group mb-3 mx-auto mt-5" style={{ width: "500px", paddingBottom: "25px", backgroundColor: "white" }}>
-                        <input type="text" className="form-control " placeholder="Type City name"
-                            aria-label="Type city name" aria-describedby="basic-addon2" onChange={handleChange} />
-                        <div className="input-group-append">
-                            {/* <Link to={`/NavBar`}> */}
-                            <button className="btn btn-outline-dark " type="button" onClick={handleClick}>Search</button>
-                            {/* </Link> */}
-                        </div>
-                    </div>
-                </div>
+            <div>
+
+            </div>
+            <div className="container">
+                <NavBar onChange={handleChange} />
 
 
                 <div className="d-flex justify-content-center">
@@ -48,10 +40,6 @@ export const HomePage = () => {
                     </div>
                 </div>
             </div >
-
-            <div>
-                <CityData id={city} submitStatus={submit} />
-            </div>
 
             <div className="container">
                 <footer className="py-3 my-4">

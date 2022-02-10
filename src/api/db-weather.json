@@ -88,6 +88,13 @@
             "uv": 2.0,
             "gust_mph": 19.2,
             "gust_kph": 31.0
+        },"astro": {
+            "sunrise": "07:23 AM",
+            "sunset": "05:28 PM",
+            "moonrise": "11:00 AM",
+            "moonset": "01:05 AM",
+            "moon_phase": "First Quarter",
+            "moon_illumination": "47"
         }
     },
 
@@ -130,6 +137,13 @@
             "uv": 1.0,
             "gust_mph": 16.3,
             "gust_kph": 26.3
+        },"astro": {
+            "sunrise": "07:23 AM",
+            "sunset": "05:28 PM",
+            "moonrise": "11:00 AM",
+            "moonset": "01:05 AM",
+            "moon_phase": "First Quarter",
+            "moon_illumination": "47"
         }
     },
 
@@ -172,6 +186,13 @@
             "uv": 7.0,
             "gust_mph": 4.7,
             "gust_kph": 7.6
+        },"astro": {
+            "sunrise": "07:23 AM",
+            "sunset": "05:28 PM",
+            "moonrise": "11:00 AM",
+            "moonset": "01:05 AM",
+            "moon_phase": "First Quarter",
+            "moon_illumination": "47"
         }
     },
 
@@ -214,6 +235,13 @@
             "uv": 5.0,
             "gust_mph": 10.5,
             "gust_kph": 16.9
+        },"astro": {
+            "sunrise": "07:23 AM",
+            "sunset": "05:28 PM",
+            "moonrise": "11:00 AM",
+            "moonset": "01:05 AM",
+            "moon_phase": "First Quarter",
+            "moon_illumination": "47"
         }
     },
 
@@ -256,6 +284,13 @@
             "uv": 5.0,
             "gust_mph": 13.0,
             "gust_kph": 20.9
+        },"astro": {
+            "sunrise": "07:23 AM",
+            "sunset": "05:28 PM",
+            "moonrise": "11:00 AM",
+            "moonset": "01:05 AM",
+            "moon_phase": "First Quarter",
+            "moon_illumination": "47"
         }
     }]
 }
