@@ -17,13 +17,13 @@ export const CityDetails = () => {
             <div className="container margin-top">
                 <div className="row justify-content-md-center">
                     <div className="col">
-                        < CityData id={city} />
+                        {/* < CityData id={city} /> */}
                     </div>
                     <div className="col">
                         <CityData id={city} />
                     </div>
                     <div className="col">
-                        <CityData id={city} />
+                        {/* <CityData id={city} /> */}
                     </div>
                 </div>
             </div >

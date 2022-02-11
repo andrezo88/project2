@@ -8,7 +8,7 @@ export const NavBar = ({ onChange }) => {
     return (
 
         <>
-            <div style={{ width: "1600px" }} className=" mx-auto">
+            <div style={{ width: "1600px" }} className=" mx-auto margin-top">
                 <div style={{ backgroundColor: "white" }}  >
                     <div className="rounded border border-dark" style={{ marginLeft: "250px", marginRight: "250px", backgroundColor: "white" }}>
                         <div className="d-flex">
