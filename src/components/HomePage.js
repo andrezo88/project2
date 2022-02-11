@@ -28,12 +28,12 @@ export const HomePage = () => {
 
             </div>
             <div className="container">
-                <NavBar onChange={handleChange} />
+                {/* <NavBar onChange={handleChange} /> */}
 
 
                 <div className="d-flex justify-content-center">
                     <div>
-                        <Link to="/city/:id" className="btn btn-outline-dark mt-5">City Weather</Link>
+                        <Link to="/city-details" className="btn btn-outline-dark mt-5">City Weather</Link>
                     </div>
                     <div>
                         <Link to="/favorite-cities" className="btn btn-outline-dark mt-5 ms-5 ">Favorite Cities</Link>
