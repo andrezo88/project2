@@ -1,7 +1,7 @@
 import './App.css';
 import { HomePage } from './components/HomePage';
 import { Routes, Route } from "react-router-dom";
-import { CityDetails } from "./components/CityDetails";
+import { CityDetails } from "./components/City/DetailsPage";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {

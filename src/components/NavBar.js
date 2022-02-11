@@ -1,7 +1,5 @@
 import { Link } from "react-router-dom"
 import LogoBrand from "../images/LogoBrand.svg";
-import { useState } from "react";
-
 
 export const NavBar = ({ onChange }) => {
 

@@ -4,7 +4,7 @@ import LogoBrand from "../images/LogoBrand.svg";
 import LogoInformation from "../images/LogoInformation.svg";
 import "./HomePage.css"
 
-import { CityData } from "./CurrentWeather"
+import { CurrentWeather } from "./City/CurrentWeather"
 import { NavBar } from "./NavBar";
 
 export const HomePage = () => {
