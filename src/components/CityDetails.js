@@ -13,20 +13,21 @@ export const CityDetails = () => {
 
     return (
         <>
-            <NavBar onChange={handleChange} />
+            <NavBar onChange={handleChange} id={city}/>
             <div className="container">
                 <div className="row justify-content-md-center">
                     <div className="col">
-                        <CityData id={city} />
+                        {/* AQUI VAI O WEATHER FORECAST */}
                     </div>
                     <div className="col">
                         <CityData id={city} />
                     </div>
                     <div className="col">
-                        <CityData id={city} />
+                        {/* AQUI VAI O WAVE FORECAST */}
                     </div>
                 </div>
             </div>
+            
         </>
     )
 }
