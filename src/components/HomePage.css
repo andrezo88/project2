@@ -3,7 +3,7 @@
 } */
 
 .information {
-    font-size: 50px;
+    font-size: 40px;
 }
 
 .info {
@@ -12,4 +12,13 @@
 
 .margin-top {
     margin-top: 30px;
+}
+
+.margin {
+    margin-right: 10px;
+}
+
+.height {
+    height: 110px;
+    padding-top: 10px;
 }

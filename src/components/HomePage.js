@@ -12,7 +12,7 @@ export const HomePage = () => {
             <div>
 
             </div>
-            <div className="container">
+            <div className="container-fluid">
                 {/* <NavBar onChange={handleChange} /> */}
 
 

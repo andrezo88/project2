@@ -23,50 +23,49 @@ export const CityData = ({ id, submitStatus }) => {
     return (
         <>
 
-            <div className="container margin-top d-grid gap-3 text-center">
-                <div className="border border-dark rounded ">
+            <div className="container-fluid d-grid gap-3 text-center">
+                <div className="border border-dark rounded height  ">
                     <div>
-                        < img src={cityIcon} alt="cityIcon" style={{ width: "30px" }} />
+                        < img src={cityIcon} alt="cityIcon" style={{ width: "40px" }} className="margin" />
                         <span>City</span>
                     </div>
-                    <span >
+                    <span className="information">
                         {cityData && cityData.location.name}
                     </span>
                 </div>
 
-                <div className="border border-dark rounded">
+                <div className="border border-dark rounded height">
+                    <div>Country</div>
                     {cityData && cityData.location.country}
                 </div>
 
-                <div className="border border-dark rounded">
-                    <div>
-                        <img src={tempIcon} alt="tempIcon" style={{ width: "20px" }} />
+                <div className="border border-dark rounded height">
+                    <div >
+                        <img src={tempIcon} alt="tempIcon" style={{ width: "20px" }} className="margin" />
                         <span>Temperature</span>
                     </div>
                     <span className="info">
-
                         {cityData && cityData.current.temp_c} ºC
                     </span>
                 </div>
 
-                <div className="border border-dark rounded">
-                    {cityData && <img src={cityData.current.condition.icon} alt="icon weather" />}
+                <div className="border border-dark rounded height">
+                    {cityData && <img src={cityData.current.condition.icon} alt="icon weather" className="margin" />}
                     {cityData && cityData.current.condition.text}
                 </div>
-                <div className="border border-dark rounded">
+                <div className="border border-dark rounded height">
                     <div>
-                        <img src={humidityIcon} alt="humidityIcon" style={{ width: "30px" }} />
+                        <img src={humidityIcon} alt="humidityIcon" style={{ width: "40px" }} className="margin" />
                         <span>humidity</span>
                     </div>
                     <span className="info">
-
                         {cityData && cityData.current.humidity} %
                     </span>
                 </div>
 
-                <div className="border border-dark rounded">
+                <div className="border border-dark rounded height">
                     <div>
-                        <img src={tempIcon} alt="tempIcon" style={{ width: "20px" }} />
+                        <img src={tempIcon} alt="tempIcon" style={{ width: "20px" }} className="margin" />
                         <span>Feels Like</span>
                     </div>
                     <span className="info">
@@ -75,9 +74,9 @@ export const CityData = ({ id, submitStatus }) => {
                     </span>
                 </div>
 
-                <div className="border border-dark rounded">
+                <div className="border border-dark rounded height">
                     <div>
-                        <img src={sunriseIcon} alt="sunriseIcon" style={{ width: "30px" }} />
+                        <img src={sunriseIcon} alt="sunriseIcon" style={{ width: "40px" }} className="margin" />
                         <span>Sunrise</span>
                     </div>
                     <span className="info">
@@ -85,9 +84,9 @@ export const CityData = ({ id, submitStatus }) => {
                     </span>
                 </div>
 
-                <div className="border border-dark rounded">
+                <div className="border border-dark rounded height">
                     <div>
-                        <img src={sunsetIcon} alt="sunsetIcon" style={{ width: "30px" }} />
+                        <img src={sunsetIcon} alt="sunsetIcon" style={{ width: "40px" }} className="margin" />
                         <span>Sunset</span>
                     </div>
                     <span className="info">
