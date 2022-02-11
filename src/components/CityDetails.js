@@ -14,10 +14,10 @@ export const CityDetails = () => {
     return (
         <>
             <NavBar onChange={handleChange} />
-            <div className="container">
+            <div className="container margin-top">
                 <div className="row justify-content-md-center">
                     <div className="col">
-                        <CityData id={city} />
+                        < CityData id={city} />
                     </div>
                     <div className="col">
                         <CityData id={city} />
@@ -26,7 +26,7 @@ export const CityDetails = () => {
                         <CityData id={city} />
                     </div>
                 </div>
-            </div>
+            </div >
         </>
     )
 }

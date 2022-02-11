@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom"
 import LogoBrand from "../images/LogoBrand.svg";
-import { useState } from "react";
+
 
 
 export const NavBar = ({ onChange }) => {
@@ -20,7 +20,7 @@ export const NavBar = ({ onChange }) => {
                                 onChange={onChange}
                             />
                             <div className="input-group-append">
-                                <Link to={`/CityDetails`}>
+                                <Link to={`/City-details`}>
                                     <button className="btn btn-outline-dark " type="button"  >Search</button>
                                 </Link>
                             </div>

@@ -1,6 +1,10 @@
 import { useState, useEffect } from "react"
-import { useParams } from "react-router-dom"
 import getAPI from "./GetWeatherAPI";
+import cityIcon from "../images/cityIcon.svg"
+import tempIcon from "../images/tempIcon.png"
+import humidityIcon from "../images/humidityIcon.png"
+import sunriseIcon from "../images/sunriseIcon.jpg"
+import sunsetIcon from "../images/sunsetIcon.jpg"
 
 export const CityData = ({ id, submitStatus }) => {
 
@@ -18,31 +22,79 @@ export const CityData = ({ id, submitStatus }) => {
 
     return (
         <>
-            <h1>Esse é o retorno do GET CITY</h1>
-            <div>
-                {cityData && cityData.location.name}
-            </div>
-            <div>
-                {cityData && cityData.location.country}
-            </div>
-            <div>
-                {cityData && cityData.current.temp_c} C
-            </div>
-            <div>
-                {cityData && <img src={cityData.current.condition.icon} alt="icon weather" />}
-                {cityData && cityData.current.condition.text}
-            </div>
-            <div>
-                {cityData && cityData.current.humidity} %
-            </div>
-            <div>
-                {cityData && cityData.current.feelslike_c} C
-            </div>
-            <div>
-                {cityData && cityData.astro.sunrise}
-            </div>
-            <div>
-                {cityData && cityData.astro.sunset}
+
+            <div className="container margin-top d-grid gap-3 text-center">
+                <div className="border border-dark rounded ">
+                    <div>
+                        < img src={cityIcon} alt="cityIcon" style={{ width: "30px" }} />
+                        <span>City</span>
+                    </div>
+                    <span >
+                        {cityData && cityData.location.name}
+                    </span>
+                </div>
+
+                <div className="border border-dark rounded">
+                    {cityData && cityData.location.country}
+                </div>
+
+                <div className="border border-dark rounded">
+                    <div>
+                        <img src={tempIcon} alt="tempIcon" style={{ width: "20px" }} />
+                        <span>Temperature</span>
+                    </div>
+                    <span className="info">
+
+                        {cityData && cityData.current.temp_c} ºC
+                    </span>
+                </div>
+
+                <div className="border border-dark rounded">
+                    {cityData && <img src={cityData.current.condition.icon} alt="icon weather" />}
+                    {cityData && cityData.current.condition.text}
+                </div>
+                <div className="border border-dark rounded">
+                    <div>
+                        <img src={humidityIcon} alt="humidityIcon" style={{ width: "30px" }} />
+                        <span>humidity</span>
+                    </div>
+                    <span className="info">
+
+                        {cityData && cityData.current.humidity} %
+                    </span>
+                </div>
+
+                <div className="border border-dark rounded">
+                    <div>
+                        <img src={tempIcon} alt="tempIcon" style={{ width: "20px" }} />
+                        <span>Feels Like</span>
+                    </div>
+                    <span className="info">
+
+                        {cityData && cityData.current.feelslike_c} ºC
+                    </span>
+                </div>
+
+                <div className="border border-dark rounded">
+                    <div>
+                        <img src={sunriseIcon} alt="sunriseIcon" style={{ width: "30px" }} />
+                        <span>Sunrise</span>
+                    </div>
+                    <span className="info">
+                        {cityData && cityData.astro.sunrise}
+                    </span>
+                </div>
+
+                <div className="border border-dark rounded">
+                    <div>
+                        <img src={sunsetIcon} alt="sunsetIcon" style={{ width: "30px" }} />
+                        <span>Sunset</span>
+                    </div>
+                    <span className="info">
+                        {cityData && cityData.astro.sunset}
+                    </span>
+                </div>
+
             </div>
         </>
     )
