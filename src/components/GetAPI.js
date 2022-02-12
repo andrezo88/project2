@@ -6,32 +6,47 @@ class getAPI {
             baseURL: "http://localhost:8000/cidades"
         })
         this.apiForecast = axios.create({
-            baseURL: "http://localhost:7500/forecast"
+            baseURL: "http://localhost:7500/cidades"
         })
     }
 
     getWeatherData = async (cityID) => {
         try {
             const { data } = await this.apiWeather.get("/")
-            /* const cityWeather = data.find(city => city.location.name === cityID) */
-            return data[0]
+            const cityWeather = data.find(city => city.location.name.toLowerCase() === cityID.toLowerCase())
+            return cityWeather
         } catch (error) {
             throw new Error(`Não pegou o WEATHER`)
         }
     }
 
-    getForecastWeatherData = async () => {
-        /* cityID */
+    getForecastWeatherData = async (cityID) => {
         try {
             const { data } = await this.apiForecast.get("/")
-            const cityForecast = data
-            return cityForecast
+            
+            const cityForecast = data.find(city => city.location.name.toLowerCase() === cityID.toLowerCase())
+            
+            const forecastData = new Array 
+          
+            cityForecast.forecast.forecastday.forEach((forecastDay)=>{            
+                forecastData.push({
+                    date: forecastDay.date,
+                    maxtemp_c: forecastDay.day.maxtemp_c,
+                    mintemp_c: forecastDay.day.mintemp_c,
+                    icon: forecastDay.day.condition.icon,
+                    sunrise: forecastDay.astro.sunrise,
+                    sunset: forecastDay.astro.sunset
+                })
+            })
+
+            return forecastData
+
         } catch (error) {
             throw new Error(`Não pegou o FORECAST`)
         }
     }
-    
 
 }
 
 export default new getAPI()
+

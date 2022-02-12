@@ -6,7 +6,7 @@ import humidityIcon from "../images/humidityIcon.png"
 import sunriseIcon from "../images/sunriseIcon.jpg"
 import sunsetIcon from "../images/sunsetIcon.jpg"
 
-export const CurrentWeather = ({ id, submitStatus }) => {
+export const CurrentWeather = ({ id }) => {
 
     const [cityData, setCityData] = useState("")
 
@@ -18,7 +18,7 @@ export const CurrentWeather = ({ id, submitStatus }) => {
         if ((id !== "")) {
             getCity()
         }
-    }, [submitStatus, id])
+    }, [id])
 
     return (
         <>
