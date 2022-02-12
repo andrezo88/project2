@@ -1,12 +1,12 @@
 import { useState, useEffect } from "react"
-import getAPI from "./GetWeatherAPI";
+import getAPI from "../GetAPI";
 import cityIcon from "../images/cityIcon.svg"
 import tempIcon from "../images/tempIcon.png"
 import humidityIcon from "../images/humidityIcon.png"
 import sunriseIcon from "../images/sunriseIcon.jpg"
 import sunsetIcon from "../images/sunsetIcon.jpg"
 
-export const CityData = ({ id, submitStatus }) => {
+export const CurrentWeather = ({ id }) => {
 
     const [cityData, setCityData] = useState("")
 
@@ -18,7 +18,7 @@ export const CityData = ({ id, submitStatus }) => {
         if ((id !== "")) {
             getCity()
         }
-    }, [submitStatus, id])
+    }, [id])
 
     return (
         <>

@@ -1,7 +1,5 @@
 import { Link } from "react-router-dom"
-import LogoBrand from "../images/LogoBrand.svg";
-
-
+import LogoBrand from "./images/LogoBrand.svg";
 
 export const NavBar = ({ onChange }) => {
 

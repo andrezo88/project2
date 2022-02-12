@@ -1,8 +1,6 @@
 import { Link } from "react-router-dom";
-//import LogoBrand from "../images/LogoBrand.svg";
-import LogoInformation from "../images/LogoInformation.svg";
+import LogoInformation from "./images/LogoInformation.svg";
 import "./HomePage.css"
-//import { NavBar } from "./NavBar";
 
 export const HomePage = () => {
 
@@ -14,7 +12,6 @@ export const HomePage = () => {
             </div>
             <div className="container-fluid">
                 {/* <NavBar onChange={handleChange} /> */}
-
 
                 <div className="d-flex justify-content-center">
                     <div>
