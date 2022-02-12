@@ -10,7 +10,7 @@ class getAPI {
     getWeatherData = async (cityID) => {
         try {
             const { data } = await this.api.get(`/`)
-            const cityData = data.find(city => city.location.name === cityID)
+            const cityData = data.find(city => city.location.name.toLowerCase() === cityID.toLowerCase())
             return cityData
         } catch (error) {
             throw new Error(`Não pegou a cidade ${cityID}`)

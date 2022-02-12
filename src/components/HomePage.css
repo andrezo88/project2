@@ -1,3 +1,44 @@
 /* * {
     background-color: gainsboro;
 } */
+
+.information {
+    font-size: 30px;
+}
+
+.temp {
+    font-size: 60px;
+}
+
+.info {
+    font-size: 30px;
+}
+
+.margin-top {
+    margin-top: 30px;
+}
+
+.margin-bottom {
+    margin-bottom: 30px;
+}
+
+.marginRight {
+    margin-right: 10px;
+}
+
+.height {
+    height: 110px;
+    padding-top: 10px;
+}
+
+.width {
+    width: 1260px;
+}
+
+.currentWeather {
+    background-color: rgb(233, 233, 233);
+}
+
+.infoWeather {
+    background-color: khaki;
+}

@@ -1,25 +1,10 @@
-import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import LogoBrand from "../images/LogoBrand.svg";
+//import LogoBrand from "../images/LogoBrand.svg";
 import LogoInformation from "../images/LogoInformation.svg";
 import "./HomePage.css"
-
-import { CityData } from "./CurrentWeather"
-import { NavBar } from "./NavBar";
+//import { NavBar } from "./NavBar";
 
 export const HomePage = () => {
-
-    const [city, setCity] = useState("")
-    const [submit, setSubmit] = useState()
-
-    const handleChange = (e) => {
-        (e && setCity(e.target.value))
-    }
-
-    const handleClick = async () => {
-        setSubmit(!submit)
-        console.log("aqui")
-    }
 
     return (
         <>
@@ -27,7 +12,7 @@ export const HomePage = () => {
             <div>
 
             </div>
-            <div className="container">
+            <div className="container-fluid">
                 {/* <NavBar onChange={handleChange} /> */}
 
 
