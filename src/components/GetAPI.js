@@ -28,7 +28,7 @@ class getAPI {
             
             const forecastData = new Array 
           
-            cityForecast.forecast.forecastday.forEach((forecastDay)=>{            
+            cityForecast.forecast.forecastday.map( (forecastDay)=> {            
                 forecastData.push({
                     date: forecastDay.date,
                     maxtemp_c: forecastDay.day.maxtemp_c,
