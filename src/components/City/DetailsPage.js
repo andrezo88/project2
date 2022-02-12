@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 
 import { NavBar } from '../NavBar'
 
-import { ForecastWeather } from './ForecastWeather'
+import { ForecastWeather } from "./ForecastWeather"
 import { CurrentWeather } from './CurrentWeather'
 
 
