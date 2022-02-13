@@ -21,10 +21,6 @@ export const ForecastWeather = ({ id }) => {
 
     }, [id])
 
-    console.log(weatherForecastData[0])
-    console.log(weatherForecastData[1])
-    console.log(weatherForecastData[2])
-
     return (
         <>
             <h1>Esse é o retorno do FORECAST WEATHER</h1>
@@ -32,7 +28,6 @@ export const ForecastWeather = ({ id }) => {
             {weatherForecastData && weatherForecastData.map((forecastDay) => {
                 return (
                     <>
-                        <div> Oi </div>
                         <div> {forecastDay.date} </div>
                         <div> {forecastDay.maxtemp_c} </div>
                         <div> {forecastDay.mintemp_c} </div>

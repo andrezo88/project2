@@ -4,6 +4,7 @@ import { NavBar } from '../NavBar'
 
 import { ForecastWeather } from "./ForecastWeather"
 import { CurrentWeather } from './CurrentWeather'
+import { ForecastWave } from './ForecastWave'
 
 
 /* Esse trecho de código vai servir como referência
@@ -45,7 +46,7 @@ export const CityDetails = () => {
                         <CurrentWeather id={city}/>
                     </div>
                     <div className="col">
-                        {/* AQUI VAI O WAVE FORECAST */}
+                        <ForecastWave id={city}/>
                     </div>
                 </div>
             </div>
