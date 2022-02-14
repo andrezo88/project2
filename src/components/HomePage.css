@@ -26,19 +26,37 @@
     margin-right: 10px;
 }
 
-.height {
+.heightCurrent {
     height: 110px;
-    padding-top: 10px;
+
 }
 
-.width {
-    width: 1260px;
+.padding-itens {
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.padding-current {
+    padding-top: 12px;
 }
 
 .currentWeather {
-    background-color: rgb(233, 233, 233);
+    background-color: rgba(233, 233, 233, 0.685);
 }
 
 .infoWeather {
     background-color: khaki;
+}
+
+.margin-top-forecast {
+    margin-top: 5px;
+}
+
+.margin-bottom-forecast {
+    margin-bottom: 5px;
+}
+
+.date-font {
+    font-weight: bolder;
+    font-size: 20px;
 }

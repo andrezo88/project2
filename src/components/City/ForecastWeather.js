@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react"
 import getAPI from "../GetAPI";
-
-
+import tempIcon from "../images/tempIcon.png"
+import sunriseIcon from "../images/sunriseIcon.jpg"
+import sunsetIcon from "../images/sunsetIcon.jpg"
 
 
 
@@ -23,17 +24,46 @@ export const ForecastWeather = ({ id }) => {
 
     return (
         <>
-            <h1>Esse é o retorno do FORECAST WEATHER</h1>
-
             {weatherForecastData && weatherForecastData.map((forecastDay) => {
                 return (
                     <>
-                        <div> {forecastDay.date} </div>
-                        <div> {forecastDay.maxtemp_c} </div>
-                        <div> {forecastDay.mintemp_c} </div>
-                        <div> <img src={forecastDay.icon} alt="icon-1st-date-forecast" /> </div>
-                        <div> {forecastDay.sunrise} </div>
-                        <div> {forecastDay.sunset} </div>
+                        <div className=" border border-dark rounded">
+                            <div className="container d-grid gap-1 text-center margin-top-forecast margin-bottom-forecast">
+                                <div className="row justify-content-md-center ">
+                                    <div className="border border-dark rounded marginRight col ">
+                                        <div className="marginRight"> Date:
+                                            <span className="date-font ">
+                                                {forecastDay.date}
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="row justify-content-md-center ">
+                                    <div className="border border-dark rounded marginRight padding-itens col ">
+                                        <span>Min Temp: </span>
+                                        <div><img src={tempIcon} alt="tempIcon" style={{ width: "20px" }} className="marginRight" /> {forecastDay.mintemp_c}ºC  </div>
+                                    </div>
+                                    <div className="border border-dark rounded marginRight padding-itens col ">
+                                        <div> <img src={forecastDay.icon} alt="icon-1st-date-forecast" /> </div>
+                                    </div>
+                                    <div className="border border-dark rounded marginRight padding-itens col ">
+                                        <span>Max Temp: </span>
+                                        <div><img src={tempIcon} alt="tempIcon" style={{ width: "20px" }} className="marginRight" /> {forecastDay.maxtemp_c}ºC </div>
+                                    </div>
+                                </div>
+                                <div className="row justify-content-md-center ">
+                                    <div className="border border-dark rounded marginRight padding-itens col ">
+                                        <div><img src={sunriseIcon} alt="tempIcon" style={{ width: "30px" }} className="marginRight" /> Sunrise: </div>
+                                        <span>{forecastDay.sunrise} </span>
+                                    </div>
+                                    <div className="border border-dark rounded marginRight padding-itens col ">
+                                        <div><img src={sunsetIcon} alt="tempIcon" style={{ width: "30px" }} className="marginRight" /> Sunrise: </div>
+                                        <span>{forecastDay.sunset} </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="padding-itens"></div>
                     </>
                 )
             })

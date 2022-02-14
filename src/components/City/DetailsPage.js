@@ -23,34 +23,34 @@ const SomeComponent = () => {
 export const CityDetails = () => {
 
     const [city, setCity] = useState("")
-/*     const [submit, setSubmit] = useState()
- */
+    /*     const [submit, setSubmit] = useState()
+     */
     const handleChange = (e) => {
         (e && setCity(e.target.value))
     }
 
-/*     const handleClick = async (e) => {
-        setSubmit(!submit)
-    } */
+    /*     const handleClick = async (e) => {
+            setSubmit(!submit)
+        } */
 
     return (
         <>
-            <NavBar onChange={handleChange} id={city}/>
+            <NavBar onChange={handleChange} id={city} />
 
             <div className="container">
                 <div className="row justify-content-md-center">
                     <div className="col">
-                        <ForecastWeather id={city}/>
+                        <ForecastWeather id={city} />
                     </div>
                     <div className="col">
-                        <CurrentWeather id={city}/>
+                        <CurrentWeather id={city} />
                     </div>
                     <div className="col">
-                        <ForecastWave id={city}/>
+                        <CurrentWeather id={city} />
                     </div>
                 </div>
             </div>
-            
+
         </>
     )
 }
