@@ -1,9 +1,11 @@
-import React from 'react'
-import { useState, useEffect } from "react"
-import getAPI from "../GetAPI"
+import React from 'react';
+import { useState, useEffect } from "react";
+import getAPI from "../GetAPI";
+import { useParams } from 'react-router-dom';
 
-export const WeatherHistory = ({ id }) => {
+export const WeatherHistory = () => {
 
+    const { id } = useParams();
     const [weatherHistoryData, setWeatherHistoryData] = useState("")
 
     useEffect(() => {
@@ -19,15 +21,17 @@ export const WeatherHistory = ({ id }) => {
 
     return (
         <>
-
-            {weatherHistoryData && weatherHistoryData.map((forecastHour) => {
-                return (
-                    <>
-                        Olá
-                        {/* {forecastHour.time} */}
-                    </>
-                )
-            })}
+            <div>
+                {weatherHistoryData && weatherHistoryData.map((forecastDay) => {
+                    console.log(forecastDay)
+                    return (
+                        <div>
+                            {forecastDay.date}
+                            {/* {forecastDay.hour.map(() =>)} */}
+                        </div>
+                    )
+                })}
+            </div>
         </>
     )
 }

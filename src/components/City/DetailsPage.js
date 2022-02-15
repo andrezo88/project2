@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { NavBar } from '../NavBar'
 import { ForecastWeather } from "./ForecastWeather"
 import { CurrentWeather } from './CurrentWeather'
-import { ForecastWave } from './ForecastWave'
+//import { ForecastWave } from './ForecastWave'
 import { WeatherHistory } from './WeatherHistory'
 
 
@@ -39,13 +39,13 @@ export const CityDetails = () => {
             <div className="container">
                 <div className="row justify-content-md-center">
                     <div className="col">
-                        <ForecastWeather id={city} forecastActive={false} />
+                        <ForecastWeather />
                     </div>
                     <div className="col">
-                        <CurrentWeather id={city} />
+                        <CurrentWeather />
                     </div>
                     <div className="col">
-                        <CurrentWeather id={city} />
+                        <CurrentWeather />
                     </div>
                 </div>
             </div>

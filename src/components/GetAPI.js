@@ -29,17 +29,15 @@ class getAPI {
 
             const cityForecast = data.find(city => city.location.name.toLowerCase() === cityID.toLowerCase())
 
-            const forecastData = new Array
-
-            cityForecast.forecast.forecastday.map((forecastDay) => {
-                forecastData.push({
+            const forecastData = cityForecast.forecast.forecastday.map((forecastDay) => {
+                return {
                     date: forecastDay.date,
                     maxtemp_c: forecastDay.day.maxtemp_c,
                     mintemp_c: forecastDay.day.mintemp_c,
                     icon: forecastDay.day.condition.icon,
                     sunrise: forecastDay.astro.sunrise,
                     sunset: forecastDay.astro.sunset
-                })
+                }
             })
 
             return forecastData
@@ -79,17 +77,20 @@ class getAPI {
 
             const cityForecast = data.find(city => city.location.name.toLowerCase() === cityID.toLowerCase())
 
-            const forecastHourData = new Array
+            let forecastHourData = cityForecast.forecast.forecastday.map((forecastDay) => {
+                const hourArray = forecastDay.hour.map((hour) => {
+                    return {
+                        time: hour.time,
+                        temp_c: hour.temp_c
+                    }
+                });
 
-            cityForecast.forecast.forecastday.hour.map((forecastHour) => {
-                return (
-
-                    forecastHourData.push({
-                        time: forecastHour.time,
-                        temp_c: forecastHour.temp_c,
-                    })
-                )
-            })
+                return {
+                    time_epoch: forecastDay.day.condition.text,
+                    date: forecastDay.date,
+                    hour: hourArray
+                }
+            });
 
             return forecastHourData
 
