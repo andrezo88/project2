@@ -20,7 +20,7 @@ export const ForecastWave = ({ id }) => {
     return (
         <>
             <h1>Esse é o retorno do FORECAST WAVE </h1>
-            
+
         </>
     )
 

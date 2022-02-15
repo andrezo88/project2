@@ -1,8 +1,16 @@
 import { Link } from "react-router-dom";
 import LogoInformation from "./images/LogoInformation.svg";
+import { NavBar } from "./NavBar";
 import "./HomePage.css"
+import { useState } from "react";
 
 export const HomePage = () => {
+
+    const [city, setCity] = useState("")
+
+    const handleChange = (e) => {
+        (e && setCity(e.target.value))
+    }
 
     return (
         <>
@@ -11,11 +19,11 @@ export const HomePage = () => {
 
             </div>
             <div className="container-fluid">
-                {/* <NavBar onChange={handleChange} /> */}
+                <NavBar onChange={handleChange} id={city} />
 
                 <div className="d-flex justify-content-center">
                     <div>
-                        <Link to="/city-details" className="btn btn-outline-dark mt-5">City Weather</Link>
+                        <Link to={`/city-details/${city}`} className="btn btn-outline-dark mt-5">City Weather</Link>
                     </div>
                     <div>
                         <Link to="/favorite-cities" className="btn btn-outline-dark mt-5 ms-5 ">Favorite Cities</Link>

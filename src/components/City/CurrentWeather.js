@@ -6,10 +6,12 @@ import humidityIcon from "../images/humidityIcon.png"
 import sunriseIcon from "../images/sunriseIcon.jpg"
 import sunsetIcon from "../images/sunsetIcon.jpg"
 import earthIcon from "../images/earthIcon.png"
+import { useParams } from "react-router-dom";
 
-export const CurrentWeather = ({ id }) => {
+export const CurrentWeather = ({ forecastActive }) => {
 
-    const [cityData, setCityData] = useState("")
+    const { id } = useParams();
+    const [cityData, setCityData] = useState("");
 
     useEffect(() => {
         const getCity = async () => {
@@ -109,7 +111,6 @@ export const CurrentWeather = ({ id }) => {
                             </span>
                         </div>
                     </div>
-
                 </div>
             </div>
             <div className="margin-bottom"></div>

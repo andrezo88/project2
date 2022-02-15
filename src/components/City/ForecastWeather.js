@@ -3,13 +3,16 @@ import getAPI from "../GetAPI";
 import tempIcon from "../images/tempIcon.png"
 import sunriseIcon from "../images/sunriseIcon.jpg"
 import sunsetIcon from "../images/sunsetIcon.jpg"
+import { useParams } from "react-router-dom";
 
 
 
+export const ForecastWeather = () => {
 
-export const ForecastWeather = ({ id }) => {
+    const { id } = useParams();
 
-    const [weatherForecastData, setWeatherForecastData] = useState("")
+    const [weatherForecastData, setWeatherForecastData] = useState("");
+
 
     useEffect(() => {
         const getForecast = async () => {

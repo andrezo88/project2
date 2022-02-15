@@ -82,10 +82,13 @@ class getAPI {
             const forecastHourData = new Array
 
             cityForecast.forecast.forecastday.hour.map((forecastHour) => {
-                forecastHourData.push({
-                    time: forecastHour.time,
-                    temp_c: forecastHour.temp_c,
-                })
+                return (
+
+                    forecastHourData.push({
+                        time: forecastHour.time,
+                        temp_c: forecastHour.temp_c,
+                    })
+                )
             })
 
             return forecastHourData
