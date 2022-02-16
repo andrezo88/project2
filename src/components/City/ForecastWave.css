@@ -1,0 +1,21 @@
+.scrollComponent {
+    overflow: auto;
+    scrollbar-gutter: stable;
+    overflow-x: hidden;
+    height: 72vh;
+    text-align: left;
+}
+
+.scrollComponent::-webkit-scrollbar {
+    width: 0.5vw;
+}
+
+.scrollComponent::-webkit-scrollbar-track {
+    background-color: rgb(37, 150, 190);
+    border-radius: 100px;
+}
+
+.scrollComponent::-webkit-scrollbar-thumb {
+    box-shadow: inset 10px 10px 10px 10px rgb(53, 108, 128);
+    border-radius: 100px;
+}
