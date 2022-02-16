@@ -3,14 +3,14 @@ import axios from "axios";
 class getAPI {
     constructor() {
         this.apiWeather = axios.create({
-            baseURL: "http://localhost:8000/cidades"
+            baseURL: "http://localhost:8000/currentWeather"
         })
-        this.apiForecast = axios.create({
-            baseURL: "http://localhost:7500/cidades"
+        this.apiForecastWeather = axios.create({
+            baseURL: "http://localhost:7500/forecastWeather"
         })
-        /*         this.apiForecastWave = axios.create({
-                    baseURL: "http://localhost:8500/hours"
-                }) */
+        this.apiForecastWave = axios.create({
+            baseURL: "http://localhost:7000/forecastWave"
+        })
     }
 
     getWeatherData = async (cityID) => {
@@ -25,11 +25,11 @@ class getAPI {
 
     getForecastWeatherData = async (cityID) => {
         try {
-            const { data } = await this.apiForecast.get("/")
+            const { data } = await this.apiForecastWeather.get("/")
 
             const cityForecast = data.find(city => city.location.name.toLowerCase() === cityID.toLowerCase())
 
-            const forecastData = cityForecast.forecast.forecastday.map((forecastDay) => {
+            const forecasWeathertData = cityForecast.forecast.forecastday.map((forecastDay) => {
                 return {
                     date: forecastDay.date,
                     maxtemp_c: forecastDay.day.maxtemp_c,
@@ -40,36 +40,35 @@ class getAPI {
                 }
             })
 
-            return forecastData
+            return forecasWeathertData
 
         } catch (error) {
             throw new Error(`Não pegou o FORECAST`)
         }
     }
 
-    /*     getWaveData = async () => {
-            try {
-                const { data } = await this.apiForecastWave.get("/")
-    
-                const forecastData = new Array 
-              
-                cityForecast.forecast.forecastday.map( (forecastDay)=> {            
-                    forecastData.push({
-                        date: forecastDay.date,
-                        maxtemp_c: forecastDay.day.maxtemp_c,
-                        mintemp_c: forecastDay.day.mintemp_c,
-                        icon: forecastDay.day.condition.icon,
-                        sunrise: forecastDay.astro.sunrise,
-                        sunset: forecastDay.astro.sunset
-                    })
+    getForecastWaveData = async (cityID) => {
+        try {
+            const { data } = await this.apiForecastWave.get("/")
+
+            const forecastWaveData = new Array 
+            
+            data[0].hours.map( (forecastHour)=> {
+                forecastWaveData.push({
+                    time: forecastHour.time,
+                    icon: forecastHour.waveHeight.icon,
+                    meteo: forecastHour.waveHeight.meteo,
+                    noaa: forecastHour.waveHeight.noaa,
+                    sg: forecastHour.waveHeight.sg,
                 })
-    
-                return data
-                
-            } catch (error) {
-                throw new Error(`Não pegou o WEATHER`)
-            }
-        } */
+            })
+
+            return forecastWaveData
+            
+        } catch (error) {
+            throw new Error(`Não pegou o FORECAST WAVE`)
+        }
+    }
 
     getHourWeatherData = async (cityID) => {
         try {

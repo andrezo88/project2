@@ -23,7 +23,7 @@ export const WeatherHistory = () => {
         <>
             <div>
                 {weatherHistoryData && weatherHistoryData.map((forecastDay) => {
-                    console.log(forecastDay)
+/*                     console.log(forecastDay)*/
                     return (
                         <div>
                             {forecastDay.date}
