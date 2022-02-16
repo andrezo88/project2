@@ -4,20 +4,7 @@ import { ForecastWeather } from "./ForecastWeather"
 import { CurrentWeather } from './CurrentWeather'
 //import { ForecastWave } from './ForecastWave'
 import { WeatherHistory } from './WeatherHistory'
-
-
-/* Esse trecho de código vai servir como referência
-para a navegação.
-
-import { useNavigate } from 'react-router-dom';
-
-const SomeComponent = () => {
-   const navigate = useNavigate();
-
-   const someEventHandler = () => {
-       navigate('/some-route');
-   }
-} */
+import { ForecastWave } from './ForecastWave'
 
 export const CityDetails = () => {
 
@@ -45,11 +32,12 @@ export const CityDetails = () => {
                         <CurrentWeather />
                     </div>
                     <div className="col">
-                        <CurrentWeather />
+                        <ForecastWave />
                     </div>
                 </div>
             </div>
             <WeatherHistory />
+
 
         </>
     )

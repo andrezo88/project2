@@ -21,16 +21,32 @@ export const WeatherHistory = () => {
 
     return (
         <>
-            <div>
-                {weatherHistoryData && weatherHistoryData.map((forecastDay) => {
-                    console.log(forecastDay)
-                    return (
-                        <div>
-                            {forecastDay.date}
-                            {/* {forecastDay.hour.map(() =>)} */}
-                        </div>
-                    )
-                })}
+            <div className=" border border-dark rounded ">
+                <div className="container d-grid gap-2 text-center col">
+                    {weatherHistoryData && weatherHistoryData.map((forecastDay) => {
+                        return (
+                            <div className="row justify-content-md-center col">
+                                {forecastDay.hour.map((hour) => {
+                                    return (
+                                        <>
+
+                                            <div >
+                                                <div className="border border-dark rounded col ">
+                                                    {hour.time}
+                                                </div>
+                                                <div className="border border-dark rounded col ">
+                                                    {hour.temp_c}
+                                                </div>
+                                            </div>
+
+                                        </>
+                                    )
+                                }
+                                )}
+                            </div>
+                        )
+                    })}
+                </div>
             </div>
         </>
     )
