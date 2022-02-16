@@ -2,22 +2,17 @@ import React, { useState } from 'react'
 import { NavBar } from '../NavBar'
 import { ForecastWeather } from "./ForecastWeather"
 import { CurrentWeather } from './CurrentWeather'
-//import { ForecastWave } from './ForecastWave'
-import { WeatherHistory } from './WeatherHistory'
 import { ForecastWave } from './ForecastWave'
+import { WeatherHistory } from './WeatherHistory'
+import "./ForecastWave.css"
 
 export const CityDetails = () => {
 
     const [city, setCity] = useState("")
-    /* const [submit, setSubmit] = useState() */
 
     const handleChange = (e) => {
         (setCity(e.target.value))
     }
-    /* 
-        const handleClick = async (e) => {
-            setSubmit(city)
-        } */
 
     return (
         <>
@@ -32,7 +27,9 @@ export const CityDetails = () => {
                         <CurrentWeather />
                     </div>
                     <div className="col">
-                        <ForecastWave />
+                        <div className="scrollComponent">
+                            <ForecastWave />
+                        </div>
                     </div>
                 </div>
             </div>
