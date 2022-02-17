@@ -51,9 +51,9 @@ class getAPI {
         try {
             const { data } = await this.apiForecastWave.get("/")
 
-            const forecastWaveData = new Array 
-            
-            data[0].hours.map( (forecastHour)=> {
+            const forecastWaveData = new Array
+
+            data[0].hours.map((forecastHour) => {
                 forecastWaveData.push({
                     time: forecastHour.time,
                     icon: forecastHour.waveHeight.icon,
@@ -64,7 +64,7 @@ class getAPI {
             })
 
             return forecastWaveData
-            
+
         } catch (error) {
             throw new Error(`Não pegou o FORECAST WAVE`)
         }
@@ -72,7 +72,7 @@ class getAPI {
 
     getHourWeatherData = async (cityID) => {
         try {
-            const { data } = await this.apiForecast.get("/")
+            const { data } = await this.apiForecastWeather.get("/")
 
             const cityForecast = data.find(city => city.location.name.toLowerCase() === cityID.toLowerCase())
 
