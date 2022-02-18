@@ -4,7 +4,7 @@ import tempIcon from "../images/tempIcon.png"
 import sunriseIcon from "../images/sunriseIcon.jpg"
 import sunsetIcon from "../images/sunsetIcon.jpg"
 import { useParams } from "react-router-dom";
-
+import { v4 as uuidv4 } from 'uuid';
 
 
 export const ForecastWeather = () => {
@@ -27,9 +27,9 @@ export const ForecastWeather = () => {
 
     return (
         <>
-            {weatherForecastData && weatherForecastData.map((forecastDay) => {
+            {weatherForecastData && weatherForecastData.map((forecastDay, index) => {
                 return (
-                    <>
+                    <div key={uuidv4()}>
                         <div className=" border border-dark rounded">
                             <div className="container d-grid gap-1 text-center margin-top-forecast margin-bottom-forecast">
                                 <div className="row justify-content-md-center ">
@@ -60,14 +60,14 @@ export const ForecastWeather = () => {
                                         <span>{forecastDay.sunrise} </span>
                                     </div>
                                     <div className="border border-dark rounded marginRight padding-itens col ">
-                                        <div><img src={sunsetIcon} alt="tempIcon" style={{ width: "30px" }} className="marginRight" /> Sunrise: </div>
+                                        <div><img src={sunsetIcon} alt="tempIcon" style={{ width: "30px" }} className="marginRight" /> Sunset: </div>
                                         <span>{forecastDay.sunset} </span>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div className="padding-itens"></div>
-                    </>
+                    </div>
                 )
             })
             }
