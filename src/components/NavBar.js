@@ -1,9 +1,16 @@
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 import LogoBrand from "./images/LogoBrand.svg";
+
 
 export const NavBar = ({ onChange, id, inputHide, searchButtonActive, returnButtonActive }) => {
 
+    const navigate = useNavigate();
 
+    const handleEnterKeyPress = (target) => {
+        if (target.charCode === 13 && id){
+            navigate(`/city-details/${id}`);
+        }
+    };
 
     return (
 
@@ -19,6 +26,7 @@ export const NavBar = ({ onChange, id, inputHide, searchButtonActive, returnButt
                                 {inputHide ? <></> : <input type="text" className="form-control " placeholder="Type City name"
                                     aria-label="Type city name" aria-describedby="basic-addon2"
                                     onChange={onChange} value={id}
+                                    onKeyPress={handleEnterKeyPress}
                                 />}
                                 <div className="input-group-append">
                                     {searchButtonActive && (
