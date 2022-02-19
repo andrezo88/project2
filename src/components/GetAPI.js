@@ -72,7 +72,7 @@ class getAPI {
 
     getHourWeatherData = async (cityID) => {
         try {
-            const { data } = await this.apiForecast.get("/")
+            const { data } = await this.apiForecastWeather.get("/")
 
             const cityForecast = data.find(city => city.location.name.toLowerCase() === cityID.toLowerCase())
 

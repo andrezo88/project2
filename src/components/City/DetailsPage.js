@@ -33,6 +33,7 @@ export const CityDetails = () => {
                     </div>
                 </div>
             </div>
+            
             <WeatherHistory />
 
         </>
