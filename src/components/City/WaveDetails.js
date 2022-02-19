@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react"
 import getAPI from "../GetAPI";
 import { useParams } from "react-router-dom";
+import { NavBar } from '../NavBar'
 
 export const WaveDetails = () => {
 
@@ -21,6 +22,8 @@ export const WaveDetails = () => {
 
     return (
         <>
+            <NavBar inputHide id={id} returnButtonActive />
+
             <div>
                 Oi
             </div>

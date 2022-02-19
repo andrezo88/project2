@@ -2,7 +2,6 @@ import { useState, useEffect } from "react"
 import getAPI from "../GetAPI";
 import { useParams, Link } from "react-router-dom";
 import { v4 as uuidv4 } from 'uuid';
-/* import { WaveDetails } from "./WaveDetails"; */
 
 export const ForecastWave = () => {
 
