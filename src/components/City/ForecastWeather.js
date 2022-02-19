@@ -3,7 +3,7 @@ import getAPI from "../GetAPI";
 import tempIcon from "../images/tempIcon.png"
 import sunriseIcon from "../images/sunriseIcon.jpg"
 import sunsetIcon from "../images/sunsetIcon.jpg"
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import { v4 as uuidv4 } from 'uuid';
 
 
@@ -27,6 +27,10 @@ export const ForecastWeather = () => {
 
     return (
         <>
+            <Link to={`/weather-details/${id}`}>
+                <span>Weather Details</span>
+            </Link>
+
             {weatherForecastData ?
                 <div>
                     {weatherForecastData && weatherForecastData.map((forecastDay, index) => {
