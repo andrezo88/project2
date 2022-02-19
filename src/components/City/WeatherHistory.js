@@ -43,6 +43,17 @@ export const WeatherHistory = () => {
     }, [id])
 
     const options = {
+
+        scales: {
+            y: {
+                ticks: {
+                    callback: function (value, index, values) {
+                        return value + "º";
+                    }
+                }
+            }
+        },
+
         Tooltips: {
             displayColors: false,
 
@@ -57,6 +68,7 @@ export const WeatherHistory = () => {
                 }
             }
         },
+
         responsive: true,
         plugins: {
             legend: {
@@ -93,7 +105,7 @@ export const WeatherHistory = () => {
     return (
         <>
             {
-                weatherHistoryData.length && <Line /* style={{width:"600px"}} */ options={options} data={data} />
+                weatherHistoryData.length && <Line options={options} data={data} />
             }
         </>
     )
