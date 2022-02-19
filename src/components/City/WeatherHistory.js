@@ -104,8 +104,9 @@ export const WeatherHistory = () => {
 
     return (
         <>
-            {
-                weatherHistoryData.length && <Line options={options} data={data} />
+            {weatherHistoryData ? <>
+                {weatherHistoryData.length && <Line options={options} data={data} />}
+            </> : "page not found"
             }
         </>
     )
