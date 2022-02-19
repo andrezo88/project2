@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react"
 import getAPI from "../GetAPI";
 import { useParams } from "react-router-dom";
-
+import { v4 as uuidv4 } from 'uuid';
 
 export const ForecastWave = () => {
 
@@ -25,17 +25,18 @@ export const ForecastWave = () => {
         <>
             {waveForecastData && waveForecastData.map((forecasthour) => {
                 return (
-                    <>
+                    <div key={uuidv4()}>
                         <div className="justify-content-md-center">
-                            Hr: {forecasthour.time} _ 
-                            Mt: {forecasthour.meteo} _ 
-                            Noaa: {forecasthour.noaa} _ 
-                            Sg: {forecasthour.sg} _ 
-                            Ic: {forecasthour.icon} _ 
+                            Hr: {forecasthour.time} _
+                            Mt: {forecasthour.meteo} _
+                            Noaa: {forecasthour.noaa} _
+                            Sg: {forecasthour.sg} _
+                            Ic: {forecasthour.icon} _
                         </div>
-                        
-                    </>
-                )}
+
+                    </div>
+                )
+            }
             )}
         </>
     )

@@ -36,6 +36,7 @@ export const CityDetails = () => {
             
             <WeatherHistory />
 
+
         </>
     )
 }
