@@ -16,7 +16,7 @@ export const ForecastWeather = () => {
 
     useEffect(() => {
         const getForecast = async () => {
-            const data = await getAPI.getForecastWeatherData(id)
+            const data = await getAPI.getForecastWeatherRealData(id)
             setWeatherForecastData(data)
         }
         if ((id !== "")) {
