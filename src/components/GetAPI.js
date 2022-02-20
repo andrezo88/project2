@@ -47,7 +47,7 @@ class getAPI {
         }
     }
 
-    getForecastWaveData = async (cityID) => {
+    getForecastWaveData = async () => {
         try {
             const { data } = await this.apiForecastWave.get("/")
 

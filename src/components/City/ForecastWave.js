@@ -24,25 +24,32 @@ export const ForecastWave = () => {
     return (
         <>
 
-            <Link to={`/wave-details/${id}`}>
-                <span>Wave Details</span>
-            </Link>
+            {waveForecastData ? 
+            
+            <>
 
-            {waveForecastData && waveForecastData.map((forecasthour) => {
-                return (
-                    <div key={uuidv4()}>
-                        <div className="justify-content-md-center">
-                            Hr: {forecasthour.time} _
-                            Mt: {forecasthour.meteo} _
-                            Noaa: {forecasthour.noaa} _
-                            Sg: {forecasthour.sg} _
-                            Ic: {forecasthour.icon} _
+                <Link to={`/wave-details/${id}`}>
+                    <span>Wave Details</span>
+                </Link>
+                
+                {waveForecastData.map((forecasthour) => {
+                    return (
+                        <div key={uuidv4()}>
+                            <div className="justify-content-md-center">
+                                Hr: {forecasthour.time} _
+                                Mt: {forecasthour.meteo} _
+                                Noaa: {forecasthour.noaa} _
+                                Sg: {forecasthour.sg} _
+                                Ic: {forecasthour.icon} _
+                            </div>
+
                         </div>
+                    )
+                })}
 
-                    </div>
-                )
+            </> : "page not found"
+            
             }
-            )}
 
         </>
     )

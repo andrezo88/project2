@@ -27,11 +27,14 @@ export const ForecastWeather = () => {
 
     return (
         <>
-            <Link to={`/weather-details/${id}`}>
-                <span>Weather Details</span>
-            </Link>
+
 
             {weatherForecastData ?
+                <>
+                <Link to={`/weather-details/${id}`}>
+                    <span>Weather Details</span>
+                </Link>
+
                 <div>
                     {weatherForecastData && weatherForecastData.map((forecastDay, index) => {
                         return (
@@ -77,7 +80,8 @@ export const ForecastWeather = () => {
                         )
                     })
                     }
-                </div> : "page not found"
+                </div>
+                </> : "page not found"
             }
 
         </>
