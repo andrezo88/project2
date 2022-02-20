@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom"
 import LogoBrand from "./images/LogoBrand.svg";
 
-export const NavBar = ({ onChange, id, searchButtonActive }) => {
+export const NavBar = ({ onChange, id, searchButtonActive, endPoint }) => {
 
 
 
@@ -23,7 +23,7 @@ export const NavBar = ({ onChange, id, searchButtonActive }) => {
                                 />
                                 <div className="input-group-append">
                                     {searchButtonActive && (
-                                        <Link to={`/city-details/${id}`}>
+                                        <Link to={`/${endPoint}/${id}`}>
                                             <button className="btn btn-outline-dark " type="button" >Search</button>
                                         </Link>
                                     )}

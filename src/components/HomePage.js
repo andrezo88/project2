@@ -26,7 +26,7 @@ export const HomePage = () => {
                         <Link to={`/city-details/${city}`} className="btn btn-outline-dark mt-5">City Weather</Link>
                     </div>
                     <div>
-                        <Link to="/favorite-cities" className="btn btn-outline-dark mt-5 ms-5 ">Favorite Cities</Link>
+                        <Link to={`/favorite-cities/${city}`} className="btn btn-outline-dark mt-5 ms-5 ">Favorite Cities</Link>
                     </div>
                 </div>
             </div >
