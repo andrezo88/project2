@@ -1,7 +1,9 @@
 import { useState, useEffect } from "react"
-import getAPI from "../GetAPI";
 import { useParams } from "react-router-dom";
+
 import { NavBar } from '../NavBar'
+
+import getAPI from "../GetAPI";
 
 export const WaveDetails = () => {
 
@@ -23,12 +25,16 @@ export const WaveDetails = () => {
     return (
         <>
             <NavBar inputHide id={id} returnButtonActive />
-
-            <div>
-                Oi
-            </div>
             <>
-                {id}
+            {waveDetails ?
+            <>
+            <div>{waveDetails[0].time}</div>
+            <div>{waveDetails[0].icon}</div>
+            <div>{waveDetails[0].meteo}</div>
+            <div>{waveDetails[0].noaa}</div>
+            <div>{waveDetails[0].sg}</div>
+            </>
+            : null }
             </>
         </>
     )

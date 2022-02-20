@@ -1,8 +1,9 @@
-import './App.css';
-import { HomePage } from './components/HomePage';
-import { Routes, Route } from "react-router-dom";
-import { CityDetails } from "./components/City/DetailsPage";
 import "bootstrap/dist/css/bootstrap.min.css";
+
+import { Routes, Route } from "react-router-dom";
+
+import { HomePage } from './components/HomePage';
+import { CityDetails } from "./components/City/DetailsPage";
 import { ErrorPage } from './components/ErrorPage';
 import { WeatherDetails } from "./components/City/WeatherDetails";
 import { WaveDetails } from "./components/City/WaveDetails";

@@ -4,7 +4,6 @@ import { ForecastWeather } from "./ForecastWeather"
 import { CurrentWeather } from './CurrentWeather'
 import { ForecastWave } from './ForecastWave'
 import { WeatherHistory } from './WeatherHistory'
-import "./ForecastWave.css"
 
 export const CityDetails = () => {
 

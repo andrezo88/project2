@@ -1,7 +1,9 @@
 import { useState, useEffect } from "react"
-import getAPI from "../GetAPI";
 import { useParams } from "react-router-dom";
+
 import { NavBar } from '../NavBar'
+
+import getAPI from "../GetAPI";
 
 export const WeatherDetails = () => {
     
@@ -11,7 +13,7 @@ export const WeatherDetails = () => {
 
     useEffect(() => {
         const getDetails = async () => {
-            const data = await getAPI.getForecastWaveData(id)
+            const data = await getAPI.getForecastWeatherData(id)
             setWeatherDetails(data)
         }
         if ((id !== "")) {
@@ -23,12 +25,17 @@ export const WeatherDetails = () => {
     return (
         <>
             <NavBar inputHide id={id} returnButtonActive />
-            
-            <div>
-                Oi
-            </div>
             <>
-                {id}
+            {weatherDetails ?
+            <>
+            <div>{weatherDetails[0].date}</div>
+            <div>{weatherDetails[0].maxtemp_c}</div>
+            <div>{weatherDetails[0].mintemp_c}</div>
+            <div>{weatherDetails[0].icon}</div>
+            <div>{weatherDetails[0].sunrise}</div>
+            <div>{weatherDetails[0].sunset}</div>
+            </>
+            : null }
             </>
         </>
     )
