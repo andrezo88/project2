@@ -105,7 +105,7 @@ export const WeatherHistory = () => {
     return (
         <>
 
-            {weatherHistoryData.length && <Line options={options} data={data} />}
+            <Line options={options} data={data} />
 
 
         </>
