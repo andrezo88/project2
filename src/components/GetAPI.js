@@ -13,13 +13,13 @@ class getAPI {
         this.apiForecastWave = axios.create({
             baseURL: "http://localhost:7000/forecastWave"
         })
-        
+
         /* real data */
         this.weatherData = {
             baseURL: "http://api.weatherapi.com/v1/forecast.json"
         }
         this.weatherHeader = {
-            headers: {"key":process.env.REACT_APP_TOKEN}
+            headers: { "key": process.env.REACT_APP_TOKEN }
         }
     }
 
@@ -36,7 +36,7 @@ class getAPI {
     /* INICIA REAL DATA */
     getWeatherRealData = async (cityID) => {
         try {
-            const { data } = await axios.get(`${this.weatherData.baseURL}?q=${cityID}`,this.weatherHeader)
+            const { data } = await axios.get(`${this.weatherData.baseURL}?q=${cityID}`, this.weatherHeader)
             return data
         } catch (error) {
             throw new Error(`Não pegou o WEATHER`)
@@ -45,7 +45,7 @@ class getAPI {
 
     getForecastWeatherRealData = async (cityID) => {
         try {
-            const { data } = await axios.get(`${this.weatherData.baseURL}?q=${cityID}&days=3`,this.weatherHeader)
+            const { data } = await axios.get(`${this.weatherData.baseURL}?q=${cityID}&days=3`, this.weatherHeader)
             const forecasWeathertData = data.forecast.forecastday.map((forecastDay) => {
                 return {
                     date: forecastDay.date,
@@ -61,10 +61,37 @@ class getAPI {
             throw new Error(`Não pegou o FORECAST WEATHER`)
         }
     }
+    getHourWeatherRealData = async (cityID) => {
+        try {
+            const { data } = await axios.get(`${this.weatherData.baseURL}?q=${cityID}&days=3`, this.weatherHeader)
+
+            const cityForecast = data.find(city => city.location.name.toLowerCase() === cityID.toLowerCase())
+
+            let forecastHourData = cityForecast.forecast.forecastday.map((forecastDay) => {
+                const hourArray = forecastDay.hour.map((hour) => {
+                    return {
+                        time: hour.time,
+                        temp_c: hour.temp_c
+                    }
+                });
+
+                return {
+                    time_epoch: forecastDay.day.condition.text,
+                    date: forecastDay.date,
+                    hour: hourArray
+                }
+            });
+
+            return forecastHourData
+
+        } catch (error) {
+            throw new Error(`Não pegou o FORECAST HOUR`)
+        }
+    }
 
     /* ACABA REAL DATA */
 
-    getForecastWeatherData = async (cityID) => {
+    /* getForecastWeatherData = async (cityID) => {
         try {
             const { data } = await this.apiForecastWeather.get("/")
 
@@ -109,7 +136,7 @@ class getAPI {
         } catch (error) {
             throw new Error(`Não pegou o FORECAST WAVE`)
         }
-    }
+    } 
 
     getHourWeatherData = async (cityID) => {
         try {
@@ -137,7 +164,7 @@ class getAPI {
         } catch (error) {
             throw new Error(`Não pegou o FORECAST HOUR`)
         }
-    }
+    }*/
 
 }
 

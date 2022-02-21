@@ -33,7 +33,7 @@ export const WeatherHistory = () => {
 
     useEffect(() => {
         const getForecast = async () => {
-            const data = await getAPI.getHourWeatherData(id)
+            const data = await getAPI.getWeatherRealData(id)
             setWeatherHistoryData(data)
         }
         if ((id !== "")) {
@@ -104,10 +104,10 @@ export const WeatherHistory = () => {
 
     return (
         <>
-            {weatherHistoryData ? <>
-                {weatherHistoryData.length && <Line options={options} data={data} />}
-            </> : "page not found"
-            }
+
+            {weatherHistoryData.length && <Line options={options} data={data} />}
+
+
         </>
     )
 }
