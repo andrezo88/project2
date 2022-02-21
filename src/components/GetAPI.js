@@ -1,9 +1,11 @@
 import axios from "axios";
+import { useParams } from "react-router-dom"
 
 class getAPI {
     constructor() {
         this.apiWeather = axios.create({
             baseURL: "http://localhost:8000/currentWeather"
+            /* baseURL: `http://api.weatherapi.com/v1/current.json?key=37a3bc7210484cbbbf210800220202&q=` */
         })
         this.apiForecastWeather = axios.create({
             baseURL: "http://localhost:7500/forecastWeather"
