@@ -47,6 +47,7 @@ class getAPI {
         try {
             const { data } = await axios.get(`${this.weatherData.baseURL}?q=${cityID}&days=3`, this.weatherHeader)
             const forecasWeathertData = data.forecast.forecastday.map((forecastDay) => {
+
                 return {
                     date: forecastDay.date,
                     maxtemp_c: forecastDay.day.maxtemp_c,
@@ -64,10 +65,10 @@ class getAPI {
     getHourWeatherRealData = async (cityID) => {
         try {
             const { data } = await axios.get(`${this.weatherData.baseURL}?q=${cityID}&days=3`, this.weatherHeader)
-
             const cityForecast = data.find(city => city.location.name.toLowerCase() === cityID.toLowerCase())
 
             let forecastHourData = cityForecast.forecast.forecastday.map((forecastDay) => {
+                console.log(forecastDay)
                 const hourArray = forecastDay.hour.map((hour) => {
                     return {
                         time: hour.time,

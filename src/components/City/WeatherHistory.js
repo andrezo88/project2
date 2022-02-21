@@ -61,12 +61,6 @@ export const WeatherHistory = () => {
             titleFontColor: "rgb(255,255,255)",
             bodyFontColor: "rgb(255,255,255)",
 
-
-            callbacks: {
-                tittle: function (item, everything) {
-                    return;
-                }
-            }
         },
 
         responsive: true,
