@@ -36,7 +36,7 @@ export const ForecastWeather = () => {
                 </Link>
 
                 <div>
-                    {weatherForecastData && weatherForecastData.map((forecastDay, index) => {
+                    {weatherForecastData && weatherForecastData.map((forecastDay) => {
                         return (
                             <div key={uuidv4()}>
                                 <div className=" border border-dark rounded">

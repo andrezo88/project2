@@ -10,12 +10,13 @@ export const CityDetails = () => {
     const [city, setCity] = useState("")
 
     const handleChange = (e) => {
-        (setCity(e.target.value))
+        (e && setCity(e.target.value))
+        console.log(e.target.value)
     }
 
     return (
         <>
-            <NavBar onChange={handleChange} id={city} searchButtonActive />
+            <NavBar onChange={handleChange} id={city} endPoint="city-details" searchButtonActive />
 
             <div className="container">
                 <div className="row justify-content-md-center">
