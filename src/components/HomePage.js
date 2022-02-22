@@ -1,8 +1,11 @@
 import { Link } from "react-router-dom";
-import LogoInformation from "./images/LogoInformation.svg";
-import { NavBar } from "./NavBar";
-import "./HomePage.css"
 import { useState } from "react";
+
+import LogoInformation from "./images/LogoInformation.svg";
+
+import { NavBar } from "./NavBar";
+
+import "./HomePage.css"
 
 export const HomePage = () => {
 

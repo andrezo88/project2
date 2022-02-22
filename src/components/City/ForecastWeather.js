@@ -3,7 +3,7 @@ import getAPI from "../GetAPI";
 import tempIcon from "../images/tempIcon.png"
 import sunriseIcon from "../images/sunriseIcon.jpg"
 import sunsetIcon from "../images/sunsetIcon.jpg"
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import { v4 as uuidv4 } from 'uuid';
 
 
@@ -16,7 +16,7 @@ export const ForecastWeather = () => {
 
     useEffect(() => {
         const getForecast = async () => {
-            const data = await getAPI.getForecastWeatherData(id)
+            const data = await getAPI.getForecastWeatherRealData(id)
             setWeatherForecastData(data)
         }
         if ((id !== "")) {
@@ -27,7 +27,14 @@ export const ForecastWeather = () => {
 
     return (
         <>
+
+
             {weatherForecastData ?
+                <>
+                <Link to={`/weather-details/${id}`}>
+                    <span>Weather Details</span>
+                </Link>
+
                 <div>
                     {weatherForecastData && weatherForecastData.map((forecastDay) => {
                         return (
@@ -73,7 +80,8 @@ export const ForecastWeather = () => {
                         )
                     })
                     }
-                </div> : "page not found"
+                </div>
+                </> : "page not found"
             }
 
         </>
