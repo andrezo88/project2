@@ -72,7 +72,7 @@ export const WeatherHistory = () => {
                 display: true,
                 text: 'Hourly Forecast',
                 font: {
-                    size: 200
+                    size: 100
                 }
             },
         },

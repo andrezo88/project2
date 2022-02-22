@@ -1,13 +1,12 @@
 import { Link, useNavigate } from "react-router-dom"
 import LogoBrand from "./images/LogoBrand.svg";
 
-
-export const NavBar = ({ onChange, id, inputHide, searchButtonActive, returnButtonActive }) => {
+export const NavBar = ({ onChange, id, searchButtonActive, endPoint, returnButtonActive, inputHide, }) => {
 
     const navigate = useNavigate();
 
     const handleEnterKeyPress = (target) => {
-        if (target.charCode === 13 && id){
+        if (target.charCode === 13 && id) {
             navigate(`/city-details/${id}`);
         }
     };
@@ -30,7 +29,7 @@ export const NavBar = ({ onChange, id, inputHide, searchButtonActive, returnButt
                                 />}
                                 <div className="input-group-append">
                                     {searchButtonActive && (
-                                        <Link to={`/city-details/${id}`}>
+                                        <Link to={`/${endPoint}/${id}`}>
                                             <button className="btn btn-outline-dark " type="button" >Search</button>
                                         </Link>
                                     )}
