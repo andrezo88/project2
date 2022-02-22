@@ -11,7 +11,6 @@ export const CityDetails = () => {
 
     const handleChange = (e) => {
         (e && setCity(e.target.value))
-        console.log(e.target.value)
     }
 
     return (
@@ -33,7 +32,7 @@ export const CityDetails = () => {
                     </div>
                 </div>
             </div>
-            
+
             <WeatherHistory />
 
 
