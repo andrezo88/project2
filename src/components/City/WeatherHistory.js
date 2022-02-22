@@ -33,7 +33,7 @@ export const WeatherHistory = () => {
 
     useEffect(() => {
         const getForecast = async () => {
-            const data = await getAPI.getWeatherRealData(id)
+            const data = await getAPI.getHourWeatherData(id)
             setWeatherHistoryData(data)
         }
         if ((id !== "")) {

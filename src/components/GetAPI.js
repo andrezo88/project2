@@ -137,7 +137,7 @@ class getAPI {
         } catch (error) {
             throw new Error(`Não pegou o FORECAST WAVE`)
         }
-    } 
+    } */
 
     getHourWeatherData = async (cityID) => {
         try {
@@ -165,7 +165,7 @@ class getAPI {
         } catch (error) {
             throw new Error(`Não pegou o FORECAST HOUR`)
         }
-    }*/
+    }
 
 }
 
