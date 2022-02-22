@@ -15,7 +15,7 @@ class getAPI {
 
         /* real data */
         this.weatherData = {
-            baseURL: "http://api.weatherapi.com/v1/forecast.json"
+            baseURL: "https://api.weatherapi.com/v1/forecast.json"
         }
         this.weatherHeader = {
             headers: { "key": process.env.REACT_APP_TOKEN }

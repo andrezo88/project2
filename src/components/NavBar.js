@@ -34,7 +34,7 @@ export const NavBar = ({ onChange, id, searchButtonActive, endPoint, returnButto
                                         </Link>
                                     )}
                                     {returnButtonActive && (
-                                        <Link to={`/${endPoint}}/${id}`}>
+                                        <Link to={`/city-details/${id}`}>
                                             <button className="btn btn-outline-dark " type="button" >Voltar</button>
                                         </Link>
                                     )}

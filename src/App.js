@@ -6,7 +6,6 @@ import { HomePage } from './components/HomePage';
 import { CityDetails } from "./components/City/DetailsPage";
 import { ErrorPage } from './components/ErrorPage';
 import { FavoriteCities } from './components/City/FavoriteCities';
-
 import { WeatherDetails } from "./components/City/WeatherDetails";
 import { WaveDetails } from "./components/City/WaveDetails";
 

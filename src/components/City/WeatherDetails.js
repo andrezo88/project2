@@ -13,7 +13,7 @@ export const WeatherDetails = () => {
 
     useEffect(() => {
         const getDetails = async () => {
-            const data = await getAPI.getForecastWeatherData(id)
+            const data = await getAPI.getForecastWeatherRealData(id)
             setWeatherDetails(data)
         }
         if ((id !== "")) {
@@ -31,7 +31,7 @@ export const WeatherDetails = () => {
                         <div>{weatherDetails[0].date}</div>
                         <div>{weatherDetails[0].maxtemp_c}</div>
                         <div>{weatherDetails[0].mintemp_c}</div>
-                        <div>{weatherDetails[0].icon}</div>
+                        <div><img src={weatherDetails[0].icon} alt="icon" /></div>
                         <div>{weatherDetails[0].sunrise}</div>
                         <div>{weatherDetails[0].sunset}</div>
                     </>

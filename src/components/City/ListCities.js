@@ -11,7 +11,7 @@ export const ListCities = () => {
 
     useEffect(() => {
         const getCity = async () => {
-            const data = await getAPI.getWeatherData(id)
+            const data = await getAPI.getWeatherRealData(id)
             setCityData([...cityData, data])
         }
         if ((id !== "")) {
