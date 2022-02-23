@@ -99,8 +99,10 @@ export const WeatherHistory = () => {
     return (
         <>
 
-            <Line options={options} data={data} />
-
+            {weatherHistoryData.length !== 0 ? <>
+                <Line options={options} data={data} />
+            </> : "Page not found"
+            }
 
         </>
     )

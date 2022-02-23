@@ -7,7 +7,7 @@ export const NavBar = ({ onChange, id, searchButtonActive, endPoint, returnButto
 
     const handleEnterKeyPress = (target) => {
         if (target.charCode === 13 && id) {
-            navigate(`/city-details/${id}`);
+            navigate(`/${endPoint}/${id}`);
         }
     };
 
@@ -29,13 +29,13 @@ export const NavBar = ({ onChange, id, searchButtonActive, endPoint, returnButto
                                 />}
                                 <div className="input-group-append">
                                     {searchButtonActive && (
-                                        <Link to={`/${endPoint}/${id}`}>
-                                            <button className="btn btn-outline-dark " type="button" >Search</button>
+                                        <Link to={id && `/${endPoint}/${id}`}>
+                                            <button className="btn btn-outline-dark mt-0" type="button" disabled={!id}>Search</button>
                                         </Link>
                                     )}
                                     {returnButtonActive && (
                                         <Link to={`/city-details/${id}`}>
-                                            <button className="btn btn-outline-dark " type="button" >Voltar</button>
+                                            <button className="btn btn-outline-dark mt-0" type="button" >Voltar</button>
                                         </Link>
                                     )}
                                 </div>

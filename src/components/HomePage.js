@@ -26,10 +26,18 @@ export const HomePage = () => {
 
                 <div className="d-flex justify-content-center">
                     <div>
-                        <Link to={`/city-details/${city}`} className="btn btn-outline-dark mt-5">City Weather</Link>
+                        <Link to={city && `/city-details/${city}`} >
+                            <button className="btn btn-outline-dark mt-5" type="button" disabled={!city}>
+                                City Weather
+                            </button>
+                        </Link>
                     </div>
                     <div>
-                        <Link to={`/favorite-cities/${city}`} className="btn btn-outline-dark mt-5 ms-5 ">Favorite Cities</Link>
+                        <Link to={city && `/favorite-cities/${city}`} >
+                            <button className="btn btn-outline-dark mt-5 ms-5" type="button" disabled={!city}>
+                                Favorite Cities
+                            </button>
+                        </Link>
                     </div>
                 </div>
             </div >
