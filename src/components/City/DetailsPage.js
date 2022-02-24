@@ -25,6 +25,9 @@ export const CityDetails = () => {
                             <ForecastWeather/>
                         </div>
                     </div>
+                    <div style={{marginLeft:"200px",marginBottom:"50px",marginTop:"23px",width:"45vw",height:"40vh"}}>
+                        <WeatherHistory />
+                    </div>
                     <div className='map'>
                         <iframe
                             style={{borderRadius:"8px",marginBottom:"20px",marginTop:"23px",width:"45vw",height:"40vh"}}
@@ -35,13 +38,15 @@ export const CityDetails = () => {
                     </div>
                 </div>
 
+
+
                 <div>
                     <ForecastWave/>
                 </div>
             </div>
             
 
-            <WeatherHistory />
+            
 
             <p className="rodape">IO FORECAST V.1 - DESENVOLVIDO POR ANDRÉ AUGUSTO E LUCAS SALOMÃO</p>
 
