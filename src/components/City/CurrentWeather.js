@@ -6,7 +6,8 @@ import humidityIcon from "../images/humidityIcon.png"
 import sunriseIcon from "../images/sunriseIcon.jpg"
 import sunsetIcon from "../images/sunsetIcon.jpg"
 import earthIcon from "../images/earthIcon.png"
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
+import "./CurrentWeather.css"
 
 export const CurrentWeather = ({ setError }) => {
 
@@ -33,99 +34,51 @@ export const CurrentWeather = ({ setError }) => {
     return (
         <>
             {cityData.location ?
+                
                 <>
-                    <div className=" border border-dark rounded ">
-                        <div className="container d-grid gap-2 text-center margin-top margin-bottom">
-                            <div className="row justify-content-md-center ">
-                                <div className="border border-dark rounded marginRight heightCurrent col padding-current ">
+                        
+                    <div className="main-current-weather">
+                        <div className="temp">
+                            <div>
+                                <div className="weather-condition">
+                                    <div className="weather-condition-2nd-layer">
+                                        {cityData.current && <img src={cityData.current.condition.icon} alt="icon weather" className="marginRight" />}
+                                        <h3>{cityData.current && cityData.current.condition.text}</h3>
+                                    </div>
                                     <div>
-                                        < img src={cityIcon} alt="cityIcon" style={{ width: "40px" }} className=" marginRight" />
-                                        <span>City</span>
+                                        <h1>{cityData.current && cityData.current.temp_c} ºC</h1>
                                     </div>
-                                    <span className="information ">
-                                        {cityData.location && cityData.location.name}
-                                    </span>
-                                </div>
-
-                                <div className="border border-dark rounded heightCurrent col padding-current">
-                                    <div>< img src={earthIcon} alt="cityIcon" style={{ width: "40px" }} className=" marginRight" />
-                                        <span>Country</span>
-                                    </div>
-                                    {cityData.location && cityData.location.country}
-                                </div>
-                            </div>
-
-                            <div className="row justify-content-md-center">
-
-                                <div className="border border-dark rounded heightCurrent width col padding-current">
-                                    <div >
-                                        <img src={tempIcon} alt="tempIcon" style={{ width: "20px" }} className="marginRight" />
-                                        <span>Temperature</span>
-                                    </div>
-                                    <span className="info">
-                                        {cityData.current && cityData.current.temp_c} ºC
-                                    </span>
-                                </div>
-
-                            </div>
-
-                            <div className="row justify-content-md-center ">
-                                <div className="border border-dark rounded heightCurrent col padding-current">
-                                    {cityData.current && <img src={cityData.current.condition.icon} alt="icon weather" className="marginRight" />}
-                                    {cityData.current && cityData.current.condition.text}
-                                </div>
-                            </div>
-
-                            <div className="row justify-content-md-center" >
-                                <div className="border border-dark rounded heightCurrent marginRight col padding-current">
-                                    <div>
-                                        <img src={humidityIcon} alt="humidityIcon" style={{ width: "40px" }} className="marginRight" />
-                                        <span>humidity</span>
-                                    </div>
-                                    <span className="info">
-                                        {cityData.current && cityData.current.humidity} %
-                                    </span>
-                                </div>
-
-                                <div className="border border-dark rounded heightCurrent col padding-current">
-                                    <div >
-                                        <img src={tempIcon} alt="tempIcon" style={{ width: "20px" }} className="marginRight" />
-                                        <span>Feels Like</span>
-                                    </div>
-                                    <span className="info">
-
-                                        {cityData.current && cityData.current.feelslike_c} ºC
-                                    </span>
-                                </div>
-                            </div>
-
-                            <div className="row justify-content-md-center">
-                                <div className="border border-dark rounded heightCurrent marginRight col padding-current">
-                                    <div>
-                                        <img src={sunriseIcon} alt="sunriseIcon" style={{ width: "40px" }} className="marginRight" />
-                                        <span>Sunrise</span>
-                                    </div>
-                                    <span className="info">
-                                        {cityData && cityData.forecast.forecastday[0].astro.sunrise}
-                                    </span>
-                                </div>
-
-                                <div className="border border-dark rounded heightCurrent col padding-current">
-                                    <div>
-                                        <img src={sunsetIcon} alt="sunsetIcon" style={{ width: "40px" }} className="marginRight" />
-                                        <span>Sunset</span>
-                                    </div>
-                                    <span className="info">
-                                        {cityData && cityData.forecast.forecastday[0].astro.sunset}
-                                    </span>
+                                </div>                                    
+                                
+                                <div>
+                                    <h6>Humidity: {cityData.current && cityData.current.humidity} %</h6>
+                                    <h6>Sunrise: {cityData && cityData.forecast.forecastday[0].astro.sunrise}</h6>
+                                    <h6>Sunset: {cityData && cityData.forecast.forecastday[0].astro.sunset}</h6>
                                 </div>
                             </div>
                         </div>
+                        
+                        <div className="city-info">
+                            <h1>{cityData.location && cityData.location.name}</h1>
+                            <h3>{cityData.location && cityData.location.country}</h3>
+                            <Link to={`/weather-details/${id}`}>
+                                <h6>Weather Details</h6>
+                            </Link>
+                        </div>
                     </div>
+                    
+                        
+                    {/*<img src={earthIcon} alt="cityIcon" style={{ width: "40px" }} className=" marginRight" />
+                    <img src={cityIcon} alt="cityIcon" style={{ width: "40px" }} className=" marginRight" />
+                    <img src={tempIcon} alt="tempIcon" style={{ width: "20px" }} className="marginRight" />
+                    <img src={humidityIcon} alt="humidityIcon" style={{ width: "40px" }} className="marginRight" />
+                    <img src={sunriseIcon} alt="sunriseIcon" style={{ width: "40px" }} className="marginRight" />
+                    <img src={tempIcon} alt="tempIcon" style={{ width: "20px" }} className="marginRight" />
+                    <img src={sunsetIcon} alt="sunsetIcon" style={{ width: "40px" }} className="marginRight" /> */}
+
                 </>
                 : "page not found"
             }
-            <div className="margin-bottom"></div>
         </>
     )
 

@@ -1,0 +1,33 @@
+.main-current-weather {
+    display: flex;
+    justify-content: left;
+    width: 50vw;
+    margin: 0 auto;
+}
+
+.city-info {
+    display:flex;
+    flex-direction: column;
+    text-align: right;
+
+}
+
+.temp {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-right: 3.9vw;
+    margin-left: 2.1vw;
+    margin-bottom: 1.1vw;
+}
+
+.weather-condition {
+    display: flex;
+    flex-direction: row;
+}
+
+.weather-condition-2nd-layer {
+    display:flex;
+    flex-direction: column;
+}
+
