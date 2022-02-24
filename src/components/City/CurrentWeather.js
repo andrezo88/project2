@@ -8,15 +8,22 @@ import sunsetIcon from "../images/sunsetIcon.jpg"
 import earthIcon from "../images/earthIcon.png"
 import { useParams } from "react-router-dom";
 
-export const CurrentWeather = () => {
+export const CurrentWeather = ({ setError }) => {
 
     const { id } = useParams();
     const [cityData, setCityData] = useState({});
 
     useEffect(() => {
+
+        setCityData("")
+
         const getCity = async () => {
-            const data = await getAPI.getWeatherRealData(id)
-            setCityData(data)
+            try {
+                const data = await getAPI.getWeatherRealData(id)
+                setCityData(data)
+            } catch (error) {
+                console.log(error.response)
+            }
         }
         if ((id !== "")) {
             getCity()

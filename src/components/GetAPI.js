@@ -21,7 +21,7 @@ class getAPI {
             const { data } = await axios.get(`${this.weatherData.baseURL}?q=${cityID}`, this.weatherHeader)
             return data
         } catch (error) {
-            throw new Error(`Não pegou o WEATHER`)
+            throw error
         }
     }
 
@@ -41,7 +41,7 @@ class getAPI {
             })
             return forecasWeathertData
         } catch (error) {
-            throw new Error(`Não pegou o FORECAST WEATHER`)
+            throw error
         }
     }
 
@@ -67,7 +67,7 @@ class getAPI {
             return forecastHourData
 
         } catch (error) {
-            throw new Error(`Não pegou o FORECAST HOUR`)
+            throw error
         }
     }
 

@@ -32,9 +32,16 @@ export const WeatherHistory = () => {
     const [weatherHistoryData, setWeatherHistoryData] = useState([])
 
     useEffect(() => {
+
+        setWeatherHistoryData("")
+
         const getForecast = async () => {
-            const data = await getAPI.getHourWeatherRealData(id)
-            setWeatherHistoryData(data)
+            try {
+                const data = await getAPI.getHourWeatherRealData(id)
+                setWeatherHistoryData(data)
+            } catch (error) {
+                console.log(error.response)
+            }
         }
         if ((id !== "")) {
             getForecast()
@@ -101,7 +108,7 @@ export const WeatherHistory = () => {
 
             {weatherHistoryData.length !== 0 ? <>
                 <Line options={options} data={data} />
-            </> : "Page not found"
+            </> : null
             }
 
         </>
