@@ -10,7 +10,7 @@ export const ForecastWave = () => {
 
     useEffect(() => {
         const getForecast = async () => {
-            const data = await getAPI.getForecastWaveData(45.523064,-122.676483)
+            const data = await getAPI.getForecastWaveData(45.523064, -122.676483)
             setWaveForecastData(data)
         }
         if ((id !== "")) {
@@ -43,7 +43,7 @@ export const ForecastWave = () => {
                         )
                     })}
 
-                </> : "page not found"
+                </> : null
 
             }
 
