@@ -25,7 +25,7 @@ export const CityDetails = () => {
                     <div className="col">
                         <CurrentWeather />
                     </div>
-                    {/* <div className="col">
+{/*                     <div className="col">
                         <div className="scrollComponent">
                             <ForecastWave />
                         </div>

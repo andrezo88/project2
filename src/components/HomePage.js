@@ -35,7 +35,7 @@ export const HomePage = () => {
                     <div>
                         <Link to={city && `/favorite-cities/${city}`} >
                             <button className="btn btn-outline-dark mt-5 ms-5" type="button" disabled={!city}>
-                                Favorite Cities
+                                Compare Cities
                             </button>
                         </Link>
                     </div>

@@ -2,27 +2,20 @@ import axios from "axios";
 
 class getAPI {
     constructor() {
-        this.apiWeather = axios.create({
-            baseURL: "http://localhost:8000/currentWeather"
-            /* baseURL: `http://api.weatherapi.com/v1/current.json?key=37a3bc7210484cbbbf210800220202&q=` */
-        })
-        this.apiForecastWeather = axios.create({
-            baseURL: "http://localhost:7500/forecastWeather"
-        })
-        this.apiForecastWave = axios.create({
-            baseURL: "http://localhost:7000/forecastWave"
-        })
-
-        /* real data */
         this.weatherData = {
             baseURL: "https://api.weatherapi.com/v1/forecast.json"
         }
         this.weatherHeader = {
-            headers: { "key": process.env.REACT_APP_TOKEN }
+            headers: { "key": process.env.REACT_APP_TOKEN_WEATHER_API }
+        }
+        this.waveData = {
+            baseURL: "https://api.stormglass.io/v2/weather/point"
+        }
+        this.waveHeader = {
+            headers: { "Authorization": process.env.REACT_APP_TOKEN_WAVE_API }
         }
     }
 
-    /* INICIA REAL DATA */
     getWeatherRealData = async (cityID) => {
         try {
             const { data } = await axios.get(`${this.weatherData.baseURL}?q=${cityID}`, this.weatherHeader)
@@ -51,12 +44,12 @@ class getAPI {
             throw new Error(`Não pegou o FORECAST WEATHER`)
         }
     }
+
     getHourWeatherRealData = async (cityID) => {
         try {
             const { data } = await axios.get(`${this.weatherData.baseURL}?q=${cityID}&days=3`, this.weatherHeader)
 
             let forecastHourData = data.forecast.forecastday.map((forecastDay) => {
-                console.log(forecastDay)
                 const hourArray = forecastDay.hour.map((hour) => {
                     return {
                         time: hour.time,
@@ -78,7 +71,33 @@ class getAPI {
         }
     }
 
-    /* ACABA REAL DATA */
+    /* getForecastWaveData = async (cityLat,cityLng) => {
+        try {
+            const { data } = await axios.get(`https://api.stormglass.io/v2/weather/point?lat=${58.7984}&lng=${17.8081}&params=${'waveHeight,airTemperature'}`,this.waveHeader)
+            
+            const forecastWaveData = new Array 
+            
+            data[0].hours.map( (forecastHour)=> {
+                forecastWaveData.push({
+                    time: forecastHour.time,
+                    icon: forecastHour.waveHeight.icon,
+                    meteo: forecastHour.waveHeight.meteo,
+                    noaa: forecastHour.waveHeight.noaa,
+                    sg: forecastHour.waveHeight.sg,
+                })
+            })
+
+            console.log(data[0])
+
+            return forecastWaveData
+
+        } catch (error) {
+            throw new Error("Nao pegou o FORECAST WAVE")
+
+        
+    }} */
+
+    
 
 
 }
