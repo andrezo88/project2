@@ -7,6 +7,7 @@ import sunriseIcon from "../images/sunriseIcon.jpg"
 import sunsetIcon from "../images/sunsetIcon.jpg"
 import earthIcon from "../images/earthIcon.png"
 import { useParams, Link } from "react-router-dom";
+import { ErrorPage } from "./ErrorPage";
 import "./CurrentWeather.css"
 
 export const CurrentWeather = ({ setError }) => {
@@ -34,9 +35,9 @@ export const CurrentWeather = ({ setError }) => {
     return (
         <>
             {cityData.location ?
-                
+
                 <>
-                        
+
                     <div className="main-current-weather">
                         <div className="temp">
                             <div>
@@ -48,8 +49,8 @@ export const CurrentWeather = ({ setError }) => {
                                     <div>
                                         <h1>{cityData.current && cityData.current.temp_c} ºC</h1>
                                     </div>
-                                </div>                                    
-                                
+                                </div>
+
                                 <div>
                                     <h6>Humidity: {cityData.current && cityData.current.humidity} %</h6>
                                     <h6>Sunrise: {cityData && cityData.forecast.forecastday[0].astro.sunrise}</h6>
@@ -57,7 +58,7 @@ export const CurrentWeather = ({ setError }) => {
                                 </div>
                             </div>
                         </div>
-                        
+
                         <div className="city-info">
                             <h1>{cityData.location && cityData.location.name}</h1>
                             <h3>{cityData.location && cityData.location.country}</h3>
@@ -66,8 +67,8 @@ export const CurrentWeather = ({ setError }) => {
                             </Link>
                         </div>
                     </div>
-                    
-                        
+
+
                     {/*<img src={earthIcon} alt="cityIcon" style={{ width: "40px" }} className=" marginRight" />
                     <img src={cityIcon} alt="cityIcon" style={{ width: "40px" }} className=" marginRight" />
                     <img src={tempIcon} alt="tempIcon" style={{ width: "20px" }} className="marginRight" />
@@ -77,9 +78,14 @@ export const CurrentWeather = ({ setError }) => {
                     <img src={sunsetIcon} alt="sunsetIcon" style={{ width: "40px" }} className="marginRight" /> */}
 
                 </>
-                : "page not found"
+                :
+                <div style={{ marginLeft: "-200px" }}>
+                    <ErrorPage />
+                    <div></div>
+                </div>
             }
         </>
+
     )
 
 }
