@@ -106,7 +106,7 @@ export const CurrentWeather = ({ setError }) => {
                                         <span>Sunrise</span>
                                     </div>
                                     <span className="info">
-                                        {cityData.astro && cityData.astro.sunrise}
+                                        {cityData && cityData.forecast.forecastday[0].astro.sunrise}
                                     </span>
                                 </div>
 
@@ -116,7 +116,7 @@ export const CurrentWeather = ({ setError }) => {
                                         <span>Sunset</span>
                                     </div>
                                     <span className="info">
-                                        {cityData.astro && cityData.astro.sunset}
+                                        {cityData && cityData.forecast.forecastday[0].astro.sunset}
                                     </span>
                                 </div>
                             </div>

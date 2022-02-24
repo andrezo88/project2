@@ -39,7 +39,7 @@ export const NavBar = ({ onChange, id, searchButtonActive, endPoint, returnButto
                                         onChange={onChange} value={id}
                                         onKeyPress={handleEnterKeyPress}
                                     />}
-                                    <div style={{color:"red", marginTop:"5px", marginBottom:"0px"}}>{error}</div>
+                                    <spam style={{color:"red", marginTop:"5px", marginBottom:"0px"}}>{error}</spam>
                                 </div>
                                 <div className="input-group-append">
                                     {searchButtonActive && (
