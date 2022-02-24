@@ -29,7 +29,7 @@ export const NavBar = ({ onChange, id, searchButtonActive, endPoint, returnButto
             <div className="main-Nav">
                 <div>
                     <Link to={"/"}>
-                        <span><img src={LogoBrand} alt="LogoBrand" /></span>
+                        <span><img src={LogoBrand} alt="LogoBrand" style={{width:"55px"}}/></span>
                     </Link>
                 </div>
 
@@ -43,18 +43,22 @@ export const NavBar = ({ onChange, id, searchButtonActive, endPoint, returnButto
                                 aria-describedby="basic-addon2"
                                 onChange={onChange} value={id}
                                 onKeyPress={handleEnterKeyPress}
+                                style={{verticalAlign:"center",marginLeft:"50px", height:"3.2vh",width:"30vw", borderWidth:"0px",border:"none"}}
                         />
+                    }
+                    {error && 
+                    <div>
+                        <spam style={{fontSize:"12px",marginLeft:"50px", color:"red", marginTop:"5px", marginBottom:"0px"}}> {error} </spam>
+                    </div>
                     }
                 </div>
 
-                <div>
-                    <spam style={{color:"red", marginTop:"5px", marginBottom:"0px"}}> {error} </spam>
-                </div>
+
                 
                 <div>
                     {searchButtonActive && (
                         <Link to={id && `/${endPoint}/${id}`}>
-                            <button className="btn btn-outline-dark mt-0" type="button" disabled={!id}>
+                            <button className="btn btn-outline-dark mt-0" style={{marginLeft:"20px", borderWidth:"0px",border:"none"}} type="button" disabled={!id}>
                                 {endPoint==="city-details" ? "Search City" : "Add City"}
                             </button>
                         </Link>

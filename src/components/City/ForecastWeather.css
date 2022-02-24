@@ -2,9 +2,35 @@
     display: inline-block;
     align-items: center;
     flex-direction: column;
-    background-color: #add8e6;
+    background-color: #93D5FF;
+    width: 9vw;
     border-radius: 10px;
-    margin-right: 40px;
+    margin-right: 45px;
+}
+
+.main-forecast-weather-card:hover {
+    background-image: linear-gradient(to right, #93D5FF, #91EAE4);
+}
+
+.main-forecast-weather-card > div {
+    margin: 3px 5px 5px 5px;
+    text-align: left;
+    font-size: 1.75vh;
+    color: white;
+    font-weight: 450;
+}
+
+.first-info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-right: 13px;
+}
+
+.dia {
+    font-size: 3vh;
+    color: white;
+    font-weight: 650;
 }
 
 .com {

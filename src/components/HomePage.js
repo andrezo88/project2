@@ -51,7 +51,7 @@ export const HomePage = () => {
                             </div>
                         </Link>
                     </ul>
-                    <p className="text-center text-dark">V1 IO FORECAST - PRODUZIDO POR ANDRÉ AUGUSTO E LUCAS SALOMÃO.</p>
+                    <p className="text-center text-dark">IO FORECAST V.1 - DESENVOLVIDO POR ANDRÉ AUGUSTO E LUCAS SALOMÃO</p>
                 </footer>
             </div>
         </>
