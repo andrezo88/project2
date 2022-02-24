@@ -1,6 +1,7 @@
 import { Link, useNavigate } from "react-router-dom"
 import { useState, useEffect } from "react"
 import LogoBrand from "./images/LogoBrand.svg";
+import "./NavBar.css"
 
 export const NavBar = ({ onChange, id, searchButtonActive, endPoint, returnButtonActive, inputHide }) => {
 
@@ -26,44 +27,55 @@ export const NavBar = ({ onChange, id, searchButtonActive, endPoint, returnButto
         <div style={{ backgroundColor: "#F5F5F5" }}>
 
             <>
-                <div style={{ width: "1600px" }} className=" mx-auto">
-                    <div >
-                        <div className="rounded border border-dark" style={{ marginLeft: "250px", marginRight: "250px" }}>
-                            <div className="d-flex align-items-center">
-                                <Link to={"/"}>
-                                    <span><img src={LogoBrand} alt="LogoBrand" /></span>
-                                </Link>
-                                <div className="input-group mb-3 mx-auto mt-5" style={{ width: "500px", backgroundColor: "white" }}>
-                                    <div style={{ width: "500px" }}>
-                                        {inputHide ? <></> : <input type="text" className="form-control " placeholder="Type City name"
-                                            aria-label="Type city name" aria-describedby="basic-addon2"
-                                            onChange={onChange} value={id}
-                                            onKeyPress={handleEnterKeyPress}
-                                        />}
-                                        <div style={{ color: "red", marginTop: "5px", marginBottom: "0px" }}>{error}</div>
-                                    </div>
-                                    <div className="input-group-append">
-                                        {searchButtonActive && (
-                                            <Link to={id && `/${endPoint}/${id}`}>
-                                                <button className="btn btn-outline-dark mt-0" type="button" disabled={!id}>
-                                                    {endPoint === "city-details" ? "Search" : "Add"}
-                                                </button>
-                                            </Link>
-                                        )}
-                                        {returnButtonActive && (
-                                            <Link to={`/city-details/${id}`}>
-                                                <button className="btn btn-outline-dark mt-0" type="button" >Voltar</button>
-                                            </Link>
-                                        )}
-                                    </div>
-
-                                </div>
-                            </div>
-
-                        </div>
+                <div className="main-Nav">
+                    <div>
+                        <Link to={"/"}>
+                            <span><img src={LogoBrand} alt="LogoBrand" style={{ width: "55px" }} /></span>
+                        </Link>
                     </div>
+
+                    <div>
+                        {inputHide ? <></> :
+                            <input
+                                type="text"
+                                className="form-control "
+                                placeholder="Type City name"
+                                aria-label="Type city name"
+                                aria-describedby="basic-addon2"
+                                onChange={onChange} value={id}
+                                onKeyPress={handleEnterKeyPress}
+                                style={{ verticalAlign: "center", marginLeft: "50px", height: "3.2vh", width: "30vw", borderWidth: "0px", border: "none" }}
+                            />
+                        }
+                        {error &&
+                            <div>
+                                <spam style={{ fontSize: "12px", marginLeft: "50px", color: "red", marginTop: "5px", marginBottom: "0px" }}> {error} </spam>
+                            </div>
+                        }
+                    </div>
+
+
+
+                    <div>
+                        {searchButtonActive && (
+                            <Link to={id && `/${endPoint}/${id}`}>
+                                <button className="btn btn-outline-dark mt-0" style={{ marginLeft: "20px", borderWidth: "0px", border: "none" }} type="button" disabled={!id}>
+                                    {endPoint === "city-details" ? "Search City" : "Add City"}
+                                </button>
+                            </Link>
+                        )}
+                    </div>
+
+                    <div>
+                        {returnButtonActive && (
+                            <Link to={`/city-details/${id}`}>
+                                <button className="btn btn-outline-dark mt-0" type="button" >Voltar</button>
+                            </Link>
+                        )}
+                    </div>
+
+
                 </div>
-                <div className="margin-bottom"></div>
             </>
         </div>
     )

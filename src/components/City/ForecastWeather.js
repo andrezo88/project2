@@ -1,10 +1,12 @@
 import { useState, useEffect } from "react"
 import getAPI from "../GetAPI";
-import tempIcon from "../images/tempIcon.png"
-import sunriseIcon from "../images/sunriseIcon.jpg"
-import sunsetIcon from "../images/sunsetIcon.jpg"
+import sunriseIcon from "../images/sunriseicon.svg";
+import sunsetIcon from "../images/sunseticon.svg";
+import upIcon from "../images/up-icon.svg";
+import downIcon from "../images/down-icon.svg";
 import { useParams, Link } from "react-router-dom";
 import { v4 as uuidv4 } from 'uuid';
+import "./ForecastWeather.css"
 
 
 export const ForecastWeather = () => {
@@ -35,51 +37,31 @@ export const ForecastWeather = () => {
                 <>
                     {weatherForecastData && weatherForecastData.map((forecastDay) => {
                         return (
-                            <div key={uuidv4()}>
-                                <div className=" border border-dark rounded">
-                                    <div className="container d-grid gap-1 text-center margin-top-forecast margin-bottom-forecast">
-                                        <div className="row justify-content-md-center ">
-                                            <div className="border border-dark rounded marginRight col ">
-                                                <div className="marginRight"> Date:
-                                                    <span className="date-font ">
-                                                        {forecastDay.date}
-                                                    </span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div className="row justify-content-md-center ">
-                                            <div className="border border-dark rounded marginRight padding-itens col ">
-                                                <span>Min Temp: </span>
-                                                <div><img src={tempIcon} alt="tempIcon" style={{ width: "20px" }} className="marginRight" /> {forecastDay.mintemp_c}ºC  </div>
-                                            </div>
-                                            <div className="border border-dark rounded marginRight padding-itens col ">
-                                                <div> <img src={forecastDay.icon} alt="icon-1st-date-forecast" /> </div>
-                                            </div>
-                                            <div className="border border-dark rounded marginRight padding-itens col ">
-                                                <span>Max Temp: </span>
-                                                <div><img src={tempIcon} alt="tempIcon" style={{ width: "20px" }} className="marginRight" /> {forecastDay.maxtemp_c}ºC </div>
-                                            </div>
-                                        </div>
-                                        <div className="row justify-content-md-center ">
-                                            <div className="border border-dark rounded marginRight padding-itens col ">
-                                                <div><img src={sunriseIcon} alt="tempIcon" style={{ width: "30px" }} className="marginRight" /> Sunrise: </div>
-                                                <span>{forecastDay.sunrise} </span>
-                                            </div>
-                                            <div className="border border-dark rounded marginRight padding-itens col ">
-                                                <div><img src={sunsetIcon} alt="tempIcon" style={{ width: "30px" }} className="marginRight" /> Sunset: </div>
-                                                <span>{forecastDay.sunset} </span>
-                                            </div>
-                                        </div>
-                                    </div>
+
+                            <div className="main-forecast-weather-card" key={uuidv4()}>
+                                <div className="first-info">
+                                    <img src={forecastDay.icon} alt="icon-1st-date-forecast" />
+                                    <span className="dia">{forecastDay.date.slice(8,10)} / </span>
+                                    <span className="dia">{forecastDay.date.slice(5,7)}</span>
                                 </div>
-                                <div className="padding-itens"></div>
+                                <div>
+                                    <img src={upIcon} alt="maxtempIcon" style={{ width: "30px" }}/> Max Temp: {forecastDay.maxtemp_c} ºC
+                                </div>
+                                <div>
+                                    <img src={downIcon} alt="mintempIcon" style={{ width: "30px" }}/> Min Temp: {forecastDay.mintemp_c} ºC
+                                </div>
+                                <div>
+                                    <img src={sunriseIcon} alt="tempIcon" style={{ width: "30px" }}/> Sunrise: {forecastDay.sunrise}
+                                </div>
+                                <div>
+                                    <img src={sunsetIcon} alt="tempIcon" style={{ width: "30px" }}/> Sunset: {forecastDay.sunset}
+                                </div>
                             </div>
+
                         )
                     })
                     }
-                    <Link to={`/weather-details/${id}`}>
-                        <span>Weather Details</span>
-                    </Link>
+                    
                 </>
                 : null
             }
