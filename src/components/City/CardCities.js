@@ -101,7 +101,7 @@ export const CardCities = ({ cityData }) => {
                         </div>
                     </div>
                 </div>
-                <div className="margin-bottom"></div> </> : "not found"
+                <div className="margin-bottom"></div> </> : null
             }
         </>
     )

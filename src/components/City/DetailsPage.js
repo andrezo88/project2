@@ -34,8 +34,6 @@ export const CityDetails = () => {
             </div>
 
             <WeatherHistory />
-
-
         </>
     )
 }

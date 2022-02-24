@@ -10,12 +10,19 @@ import { v4 as uuidv4 } from 'uuid';
 export const ForecastWeather = () => {
 
     const { id } = useParams();
-    const [weatherForecastData, setWeatherForecastData] = useState("");
+    const [weatherForecastData, setWeatherForecastData] = useState([]);
 
     useEffect(() => {
+
+        setWeatherForecastData("")
+
         const getForecast = async () => {
-            const data = await getAPI.getForecastWeatherRealData(id)
-            setWeatherForecastData(data)
+            try {
+                const data = await getAPI.getForecastWeatherRealData(id)
+                setWeatherForecastData(data)
+            } catch (error) {
+                console.log(error.response)
+            }
         }
         if ((id !== "")) {
             getForecast()
@@ -74,7 +81,7 @@ export const ForecastWeather = () => {
                         <span>Weather Details</span>
                     </Link>
                 </>
-                : "page not found"
+                : null
             }
         </>
     )
