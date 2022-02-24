@@ -14,26 +14,30 @@ export const CityDetails = () => {
     }
 
     return (
-        <>
+        <div /* style={{ backgroundColor: "#F5F5F5" }} */>
+
             <NavBar onChange={handleChange} id={city} endPoint="city-details" searchButtonActive />
 
-            <div className="container">
-                <div className="row justify-content-md-center">
-                    <div className="col">
-                        <ForecastWeather />
-                    </div>
-                    <div className="col">
-                        <CurrentWeather />
-                    </div>
-{/*                     <div className="col">
+            {city ?
+
+                <div className="container">
+                    <div className="row justify-content-md-center">
+                        <div className="col">
+                            <ForecastWeather />
+                        </div>
+                        <div className="col">
+                            <CurrentWeather />
+                        </div>
+                        {/* <div className="col">
                         <div className="scrollComponent">
                             <ForecastWave />
                         </div>
                     </div> */}
+                    </div>
                 </div>
-            </div>
-
+                : "error"
+            }
             <WeatherHistory />
-        </>
+        </div>
     )
 }

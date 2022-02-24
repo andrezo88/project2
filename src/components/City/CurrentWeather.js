@@ -7,6 +7,9 @@ import sunriseIcon from "../images/sunriseIcon.jpg"
 import sunsetIcon from "../images/sunsetIcon.jpg"
 import earthIcon from "../images/earthIcon.png"
 import { useParams } from "react-router-dom";
+import errorPage from "../images/errorPage.jpg";
+import { ErrorPage } from "./ErrorPage";
+
 
 export const CurrentWeather = ({ setError }) => {
 
@@ -123,10 +126,14 @@ export const CurrentWeather = ({ setError }) => {
                         </div>
                     </div>
                 </>
-                : "page not found"
+                :
+                <div style={{ marginLeft: "-200px" }}>
+                    <ErrorPage />
+                    <div></div>
+                </div>
             }
-            <div className="margin-bottom"></div>
         </>
+
     )
 
 }

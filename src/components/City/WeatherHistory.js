@@ -50,7 +50,6 @@ export const WeatherHistory = () => {
     }, [id])
 
     const options = {
-
         scales: {
             y: {
                 ticks: {
@@ -63,7 +62,6 @@ export const WeatherHistory = () => {
 
         Tooltips: {
             displayColors: false,
-
             backgroundColor: "rgb(150,50,0)",
             titleFontColor: "rgb(255,255,255)",
             bodyFontColor: "rgb(255,255,255)",
@@ -86,21 +84,22 @@ export const WeatherHistory = () => {
     };
 
     const labels = weatherHistoryData.length && weatherHistoryData[0].hour.map((h) => {
-        return h.time;
+        return h.time.split(" ")[1];
     });
 
     const data = {
-        labels,
+        labels: labels,
         datasets: [
             {
                 label: 'Temp C',
                 data: weatherHistoryData.length && weatherHistoryData[0].hour.map((h) => {
                     return h.temp_c
                 }),
-                borderColor: 'rgb(255, 99, 132)',
-                backgroundColor: 'rgba(255, 99, 132, 0.5)',
+                borderColor: 'rgb(0,0,0)',
+                backgroundColor: 'rgba(255, 99, 132)',
+                tension: 0.3,
             },
-        ],
+        ]
     };
 
     return (
