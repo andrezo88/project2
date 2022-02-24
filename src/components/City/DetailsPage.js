@@ -19,21 +19,22 @@ export const CityDetails = () => {
 
             <div className="container">
                 <div className="row justify-content-md-center">
-                    <div className="col">
-                        <ForecastWeather />
+                    <CurrentWeather/>
+                    <div className='com'>
+                        <ForecastWeather/>
                     </div>
-                    <div className="col">
-                        <CurrentWeather />
-                    </div>
-{/*                     <div className="col">
-                        <div className="scrollComponent">
-                            <ForecastWave />
-                        </div>
-                    </div> */}
+                
                 </div>
             </div>
 
             <WeatherHistory />
+
+            <iframe
+                style={{borderRadius:"8px",marginBottom:"40px",marginTop:"50px",width:"45vw",height:"40vh"}}
+                loading="lazy"
+                allowfullscreen
+                src={`https://www.google.com/maps/embed/v1/place?key=AIzaSyB5pePeSlLHqQG5PP8hnLP_VRbd9P48s0c&q=${city}`}>
+            </iframe>
         </>
     )
 }

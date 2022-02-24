@@ -1,0 +1,13 @@
+.main-forecast-weather-card {
+    display: inline-block;
+    align-items: center;
+    flex-direction: column;
+    background-color: #add8e6;
+    border-radius: 10px;
+    margin-right: 40px;
+}
+
+.com {
+    display: flex;
+    flex-direction: row;
+}
