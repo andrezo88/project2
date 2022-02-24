@@ -29,7 +29,7 @@ export const CityDetails = () => {
                         <iframe
                             style={{borderRadius:"8px",marginBottom:"20px",marginTop:"23px",width:"45vw",height:"40vh"}}
                             loading="lazy"
-                            allowfullscreen
+                            allowFullScreen
                             src={`https://www.google.com/maps/embed/v1/place?key=AIzaSyB5pePeSlLHqQG5PP8hnLP_VRbd9P48s0c&q=${city}`}>
                         </iframe>
                     </div>

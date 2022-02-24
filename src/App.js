@@ -25,7 +25,7 @@ function App() {
         <Route path="/weather-details/*" element={<ErrorPage />} />
         <Route path="/wave-details/:id" element={<WaveDetails />} />
         <Route path="/wave-details/*" element={<ErrorPage />} />
-        <Route path="/about" element={<About/>}/>
+        {/* <Route path="/about" element={<About/>}/> */}
 
       </Routes >
 
