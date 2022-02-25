@@ -1,11 +1,5 @@
 import { useState, useEffect } from "react"
 import getAPI from "../GetAPI";
-import cityIcon from "../images/cityIcon.svg"
-import tempIcon from "../images/tempIcon.png"
-import humidityIcon from "../images/humidityIcon.png"
-import sunriseIcon from "../images/sunriseIcon.jpg"
-import sunsetIcon from "../images/sunsetIcon.jpg"
-import earthIcon from "../images/earthIcon.png"
 import { useParams, Link } from "react-router-dom";
 import { ErrorPage } from "./ErrorPage";
 import "./CurrentWeather.css"
@@ -43,8 +37,12 @@ export const CurrentWeather = ({ setError }) => {
                             <div>
                                 <div className="weather-condition">
                                     <div className="weather-condition-2nd-layer">
-                                        {cityData.current && <img src={cityData.current.condition.icon} alt="icon weather" className="marginRight" />}
-                                        <h3>{cityData.current && cityData.current.condition.text}</h3>
+                                        {cityData.current && 
+                                        <>
+                                        <img src={cityData.current.condition.icon} style={{width:"60px"}}alt="icon weather" />
+                                        <h5>{cityData.current.condition.text}</h5>
+                                        </>
+                                        }
                                     </div>
                                     <div>
                                         <h1>{cityData.current && cityData.current.temp_c} ºC</h1>
@@ -79,9 +77,8 @@ export const CurrentWeather = ({ setError }) => {
 
                 </>
                 :
-                <div style={{ marginLeft: "-200px" }}>
+                <div style={{display:"flex",justifyContent:"center"}}>
                     <ErrorPage />
-                    <div></div>
                 </div>
             }
         </>

@@ -41,8 +41,8 @@ export const ForecastWeather = () => {
                             <div className="main-forecast-weather-card" key={uuidv4()}>
                                 <div className="first-info">
                                     <img src={forecastDay.icon} alt="icon-1st-date-forecast" />
-                                    <span className="dia">{forecastDay.date.slice(8,10)} / </span>
-                                    <span className="dia">{forecastDay.date.slice(5,7)}</span>
+                                    <span className="dia">{forecastDay.date.slice(8,10)}/</span>
+                                    <span className="dia">{forecastDay.date.slice(5,7)} </span>
                                 </div>
                                 <div>
                                     <img src={upIcon} alt="maxtempIcon" style={{ width: "30px" }}/> Max Temp: {forecastDay.maxtemp_c} ºC

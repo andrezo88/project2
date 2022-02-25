@@ -2,6 +2,7 @@ import React from 'react';
 import { useState, useEffect } from "react";
 import getAPI from "../GetAPI";
 import { useParams } from 'react-router-dom';
+import "./DetailsPage.css"
 
 import {
     Chart as ChartJS,
@@ -77,7 +78,7 @@ export const WeatherHistory = () => {
                 display: true,
                 text: 'Hourly Forecast',
                 font: {
-                    size: 100
+                    size: 30
                 }
             },
         },
@@ -107,6 +108,14 @@ export const WeatherHistory = () => {
 
             {weatherHistoryData.length !== 0 ? <>
                 <Line options={options} data={data} />
+                <div className='map'>
+                        <iframe
+                            style={{ borderRadius: "8px", marginBottom: "20px", marginTop: "23px", width: "45vw", height: "40vh" }}
+                            loading="lazy"
+                            allowFullScreen
+                            src={`https://www.google.com/maps/embed/v1/place?key=AIzaSyB5pePeSlLHqQG5PP8hnLP_VRbd9P48s0c&q=${id}`}>
+                        </iframe>
+                </div>
             </> : null
             }
 

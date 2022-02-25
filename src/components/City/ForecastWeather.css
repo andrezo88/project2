@@ -3,7 +3,7 @@
     align-items: center;
     flex-direction: column;
     background-color: #93D5FF;
-    width: 9vw;
+    width: 9.6vw;
     border-radius: 10px;
     margin-right: 45px;
 }
@@ -18,6 +18,8 @@
     font-size: 1.75vh;
     color: white;
     font-weight: 450;
+    display: flex;
+    justify-content: left;
 }
 
 .first-info {
