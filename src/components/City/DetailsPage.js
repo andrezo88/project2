@@ -15,7 +15,7 @@ export const CityDetails = () => {
     }
 
     return (
-        <div /* style={{ backgroundColor: "#F5F5F5" }} */>
+        <div>
 
             <NavBar onChange={handleChange} id={city} endPoint="city-details" searchButtonActive />
             
@@ -39,7 +39,9 @@ export const CityDetails = () => {
                 
             </div>
 
-            <p className="rodape">IO FORECAST V.1 - DESENVOLVIDO POR ANDRÉ AUGUSTO E LUCAS SALOMÃO</p>
+            <div>
+                <p className="rodape">IO FORECAST V.1 - DESENVOLVIDO POR ANDRÉ AUGUSTO E LUCAS SALOMÃO</p>
+            </div>
 
         </div>
     )

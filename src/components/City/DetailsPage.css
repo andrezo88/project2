@@ -1,26 +1,20 @@
 .forecast-weather {
-    width: 35vw;
     display: flex;
-    justify-content: center;
-}
-
-.map {
-    margin: 0 auto;
-    display: flex;
-    justify-content: center;
+    justify-content: left;
 }
 
 .rodape {
-    background-color: aliceblue;
-    margin: 0 auto;
     height: 8vh;
     display: flex;
     align-items: center;
     justify-content: center;
     background-image: linear-gradient(white, aliceblue);
+    margin-top: 40vh;
+    margin-bottom: 0px;
 }
 
 .main-details {
     display: flex;
     flex-direction: column;
+    margin-left:10vw;
 }

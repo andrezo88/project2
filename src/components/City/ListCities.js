@@ -2,6 +2,7 @@ import { CardCities } from "./CardCities";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import getAPI from "../GetAPI";
+import "./ListCities.css"
 
 export const ListCities = () => {
 
@@ -21,19 +22,32 @@ export const ListCities = () => {
 
     return (
         <>
-            <div className="container">
-                <div className="row justify-content-md-center">
+            <div className="compare-cities">
+                <div>
+                    <h2>Compare Cities</h2>
+                </div>
+                <table>
+                    <tr>
+                        <th>location</th>
+                        <th>country</th>
+                        <th>current condition</th>
+                        <th>current temperature</th>
+                        <th>humidity</th>
+                        <th>sunrise</th>
+                        <th>sunset</th>
+                    </tr>
+
+
                     {cityData.map((city) => {
                         return (
-                            <div className="col-4">
-                                <CardCities cityData={city} />
-
-                            </div>
+                            <CardCities cityData={city}/>
                         )
                     })
                     }
-                </div>
+
+                </table>
             </div>
+
         </>
     )
 }

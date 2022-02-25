@@ -10,6 +10,7 @@
 
 .main-forecast-weather-card:hover {
     background-image: linear-gradient(to right, #93D5FF, #91EAE4);
+    opacity: 0.8;
 }
 
 .main-forecast-weather-card > div {

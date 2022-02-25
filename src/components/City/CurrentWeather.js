@@ -66,15 +66,6 @@ export const CurrentWeather = ({ setError }) => {
                         </div>
                     </div>
 
-
-                    {/*<img src={earthIcon} alt="cityIcon" style={{ width: "40px" }} className=" marginRight" />
-                    <img src={cityIcon} alt="cityIcon" style={{ width: "40px" }} className=" marginRight" />
-                    <img src={tempIcon} alt="tempIcon" style={{ width: "20px" }} className="marginRight" />
-                    <img src={humidityIcon} alt="humidityIcon" style={{ width: "40px" }} className="marginRight" />
-                    <img src={sunriseIcon} alt="sunriseIcon" style={{ width: "40px" }} className="marginRight" />
-                    <img src={tempIcon} alt="tempIcon" style={{ width: "20px" }} className="marginRight" />
-                    <img src={sunsetIcon} alt="sunsetIcon" style={{ width: "40px" }} className="marginRight" /> */}
-
                 </>
                 :
                 <div style={{display:"flex",justifyContent:"center"}}>

@@ -5,9 +5,10 @@
     align-items: center;
     justify-content: center;
     padding-top: 15px;
-    padding-left: 30px;
+    padding-bottom: 35px;
 }
 
 .main-Nav > div > input:hover{
     background-image: linear-gradient(to right, #93D5FF, #91EAE4);
+    opacity: 0.4;
 }
