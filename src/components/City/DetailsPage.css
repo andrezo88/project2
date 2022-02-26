@@ -9,12 +9,17 @@
     align-items: center;
     justify-content: center;
     background-image: linear-gradient(white, aliceblue);
-    margin-top: 40vh;
+    margin-top: 3vh;
     margin-bottom: 0px;
 }
 
 .main-details {
     display: flex;
     flex-direction: column;
-    margin-left:10vw;
+    margin-left:13vw;
+}
+
+.table-orientation {
+    display: flex;
+    flex-direction: row;
 }

@@ -1,12 +1,14 @@
 .main-current-weather {
     display: flex;
     justify-content: left;
+    margin-left: 45px
 }
 
 .city-info {
     display:flex;
     flex-direction: column;
     text-align: right;
+    margin-left:60px
 }
 
 .temp {
@@ -15,6 +17,7 @@
     justify-content: space-evenly;
     margin-right: 3.9vw;
     margin-bottom: 1.1vw;
+    margin-left:10px
 }
 
 .weather-condition {

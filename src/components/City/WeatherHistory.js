@@ -41,7 +41,7 @@ export const WeatherHistory = () => {
                 const data = await getAPI.getHourWeatherRealData(id)
                 setWeatherHistoryData(data)
             } catch (error) {
-                console.log(error.response)
+                throw "Erro no get forecast no gráfico"
             }
         }
         if ((id !== "")) {

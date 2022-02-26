@@ -21,9 +21,11 @@ export const CurrentWeather = ({ setError }) => {
                 console.log(error.response)
             }
         }
+        
         if ((id !== "")) {
             getCity()
         }
+
     }, [id])
 
     return (

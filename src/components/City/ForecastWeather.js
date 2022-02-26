@@ -4,7 +4,7 @@ import sunriseIcon from "../images/sunriseicon.svg";
 import sunsetIcon from "../images/sunseticon.svg";
 import upIcon from "../images/up-icon.svg";
 import downIcon from "../images/down-icon.svg";
-import { useParams, Link } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { v4 as uuidv4 } from 'uuid';
 import "./ForecastWeather.css"
 

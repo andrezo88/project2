@@ -18,25 +18,26 @@ export const CityDetails = () => {
         <div>
 
             <NavBar onChange={handleChange} id={city} endPoint="city-details" searchButtonActive />
-            
-            <div className='main-details'>
-                
-                <div>
-                    <CurrentWeather />
-                </div>
-                  
-                <div className='forecast-weather'>
-                    <ForecastWeather />
-                </div>
+            <div className='table-orientation'>
+                <div className='main-details'>
+                    
+                    <div>
+                        <CurrentWeather />
+                    </div>
+                    
+                    <div className='forecast-weather'>
+                        <ForecastWeather />
+                    </div>
 
-                <div style={{marginBottom: "100px", marginTop: "23px", width: "45vw", height: "40vh" }}>
-                    <WeatherHistory />
+                    <div style={{marginBottom: "100px", marginTop: "23px", width: "45vw", height: "40vh" }}>
+                        <WeatherHistory />
+                    </div>
+                    
                 </div>
 
                 <div>
                     <ForecastWave />
                 </div>
-                
             </div>
 
             <div>

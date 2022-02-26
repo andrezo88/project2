@@ -14,6 +14,9 @@ class getAPI {
         this.waveHeader = {
             headers: { "Authorization": process.env.REACT_APP_TOKEN_WAVE_API }
         }
+        this.waveTest = {
+            baseURL: "http://localhost:8000/hours"
+        }
     }
 
     getWeatherRealData = async (cityID) => {
@@ -71,15 +74,18 @@ class getAPI {
         }
     }
 
-    /* getForecastWaveData = async (cityLat,cityLng) => {
+    getForecastWaveData = async () => {
         try {
-            const { data } = await axios.get(`https://api.stormglass.io/v2/weather/point?lat=${58.7984}&lng=${17.8081}&params=${'waveHeight,airTemperature'}`,this.waveHeader)
+
+            /* const { data } = await axios.get(`https://api.stormglass.io/v2/weather/point?lat=${58.7984}&lng=${17.8081}&params=${'waveHeight,airTemperature'}`,this.waveHeader) */
+
+            const { data } = await axios.get(this.waveTest.baseURL)
             
             const forecastWaveData = new Array 
-            
-            data[0].hours.map( (forecastHour)=> {
+
+            data.map( (forecastHour)=> {
                 forecastWaveData.push({
-                    time: forecastHour.time,
+                    time: `${forecastHour.time.slice(0,10)} - ${forecastHour.time.slice(11,13)}`,
                     icon: forecastHour.waveHeight.icon,
                     meteo: forecastHour.waveHeight.meteo,
                     noaa: forecastHour.waveHeight.noaa,
@@ -87,7 +93,7 @@ class getAPI {
                 })
             })
 
-            console.log(data[0])
+            console.log(forecastWaveData)
 
             return forecastWaveData
 
@@ -95,7 +101,7 @@ class getAPI {
             throw new Error("Nao pegou o FORECAST WAVE")
 
         
-    }} */
+    }}
 
     
 

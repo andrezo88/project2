@@ -6,6 +6,7 @@
     width: 9.6vw;
     border-radius: 10px;
     margin-right: 45px;
+    margin-left: 45px
 }
 
 .main-forecast-weather-card:hover {
@@ -17,10 +18,10 @@
     margin: 3px 5px 5px 5px;
     text-align: left;
     font-size: 1.75vh;
-    color: white;
-    font-weight: 450;
+    font-weight: 400;
     display: flex;
     justify-content: left;
+    align-items: center;
 }
 
 .first-info {
