@@ -9,10 +9,17 @@ import "./DetailsPage.css"
 export const CityDetails = () => {
 
     const [city, setCity] = useState("")
+    const [geographicLocation, setGeographicLocation] = useState([])
 
     const handleChange = (e) => {
         (e && setCity(e.target.value))
     }
+
+    const collectGeographicLocation = (geographicArray) => {
+        setGeographicLocation(geographicArray)
+    }
+
+    
 
     return (
         <div>
@@ -22,7 +29,7 @@ export const CityDetails = () => {
                 <div className='main-details'>
                     
                     <div>
-                        <CurrentWeather />
+                        <CurrentWeather geographic={collectGeographicLocation}/>
                     </div>
                     
                     <div className='forecast-weather'>
@@ -36,7 +43,7 @@ export const CityDetails = () => {
                 </div>
 
                 <div>
-                    <ForecastWave />
+                    <ForecastWave geographicData={geographicLocation}/>
                 </div>
             </div>
 

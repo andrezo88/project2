@@ -4,7 +4,7 @@ import { useParams, Link } from "react-router-dom";
 import { ErrorPage } from "./ErrorPage";
 import "./CurrentWeather.css"
 
-export const CurrentWeather = ({ setError }) => {
+export const CurrentWeather = ({ geographic }) => {
 
     const { id } = useParams();
     const [cityData, setCityData] = useState({});
@@ -16,6 +16,7 @@ export const CurrentWeather = ({ setError }) => {
         const getCity = async () => {
             try {
                 const data = await getAPI.getWeatherRealData(id)
+                geographic([data.location.lat, data.location.lon])
                 setCityData(data)
             } catch (error) {
                 console.log(error.response)
