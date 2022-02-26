@@ -47,7 +47,7 @@ export const HomePage = () => {
                     <ul className="nav justify-content-center border-bottom pb-3 mb-3 ">
                         <Link to="/about" className="text-dark text-opacity-50 text-center " style={{ textDecoration: "none" }}>
                             <div className="media text-dark" style={{ marginTop: "100px" }}>
-                                <img src={LogoInformation} alt="Logo Sobre" style={{ width: "20px" }} />SOBRE
+                                <img src={LogoInformation} alt="Logo Sobre" style={{ width: "20px" }} />About
                             </div>
                         </Link>
                     </ul>
