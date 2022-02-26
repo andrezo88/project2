@@ -8,6 +8,7 @@ import { ErrorPage } from "../src/components/City/ErrorPage";
 import { FavoriteCities } from './components/City/FavoriteCities';
 import { WeatherDetails } from "./components/City/WeatherDetails";
 import { WaveDetails } from "./components/City/WaveDetails";
+import { AboutPage } from "./components/AboutPage";
 
 function App() {
 
@@ -24,6 +25,8 @@ function App() {
 
         <Route path="/wave-details/:id" element={<WaveDetails />} />
         <Route path="/wave-details/*" element={<ErrorPage />} />
+
+        <Route path="/about" element={<AboutPage />} />
 
 
       </Routes >

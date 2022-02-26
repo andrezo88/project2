@@ -1,4 +1,27 @@
 .about-section {
     display: flex;
     flex-direction: row;
+    /* align-items: center; */
+}
+
+.img-about {
+    margin: 50px 100px;
+}
+
+.img-about>img {
+    width: 400px;
+}
+
+.text-about {
+    width: 50vw;
+}
+
+.text-about-title {
+    margin: 100px 0px 0px 0px;
+    font-size: 50px;
+}
+
+.text-about-msg {
+    text-align: justify;
+    font-size: 25px;
 }
