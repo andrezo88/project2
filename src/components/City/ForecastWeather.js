@@ -34,7 +34,13 @@ export const ForecastWeather = () => {
     return (
         <>
             {weatherForecastData ?
+
+
                 <>
+{/*                     <div style={{marginLeft:"200px", marginBottom:"12px"}}>
+                        <h3 style={{fontWeight:"600"}} >Weather Forecast by Day</h3>
+                    </div> */}
+
                     {weatherForecastData && weatherForecastData.map((forecastDay) => {
                         return (
 

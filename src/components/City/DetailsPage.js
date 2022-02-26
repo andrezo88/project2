@@ -9,7 +9,6 @@ import "./DetailsPage.css"
 export const CityDetails = () => {
 
     const [city, setCity] = useState("")
-    
 
     const handleChange = (e) => {
         (e && setCity(e.target.value))
@@ -19,9 +18,10 @@ export const CityDetails = () => {
         <div>
 
             <NavBar onChange={handleChange} id={city} endPoint="city-details" searchButtonActive />
-            <div className='table-orientation'>
+
+            <div /* className='table-orientation' */>
                 <div className='main-details'>
-                    
+
                     <div>
                         <CurrentWeather />
                     </div>
@@ -36,9 +36,13 @@ export const CityDetails = () => {
                     
                 </div>
 
-                <div>
+{/*                 <div>
+                    <div style={{marginBottom:"12px"}}>
+                        <h5 style={{fontWeight:"600"}} > Wave Forecast by Day and Hour </h5>
+                    </div>
+
                     <ForecastWave />
-                </div>
+                </div> */}
 
             </div>
 
