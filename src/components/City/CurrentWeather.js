@@ -36,7 +36,7 @@ export const CurrentWeather = () => {
 
                 <>
 
-                    <div style={{ marginLeft: "255px", marginBottom: "12px" }}>
+                    <div style={{ marginLeft: "255px", marginBottom: "12px", marginTop: "150px" }}>
                         <h3 style={{ fontWeight: "600" }} >Current Weather </h3>
                     </div>
 
