@@ -77,22 +77,16 @@ class getAPI {
     getForecastWaveData = async (geographicData) => {
         try {
 
-/*              const { data } = await axios.get(`https://api.stormglass.io/v2/weather/point?lat=${geographicData[0]}&lng=${geographicData[1]}&params=${'waveHeight,airTemperature'}`,this.waveHeader)
- */ 
+/*             const { data } = await axios.get(`https://api.stormglass.io/v2/weather/point?lat=${geographicData[0]}&lng=${geographicData[1]}&params=${'waveHeight,airTemperature'}`,this.waveHeader)  */         
             const { data } = await axios.get(this.waveTest.baseURL)
-
-/*             console.log("lat",geographicData[0])
-            console.log("lng",geographicData[1]) */
             
             const forecastWaveData = new Array 
 
-            data.map( (forecastHour)=> {
+            data.hours.map( (forecastHour)=> {
                 forecastWaveData.push({
                     time: `${forecastHour.time.slice(0,10)} - ${forecastHour.time.slice(11,13)}`,
-                    icon: forecastHour.waveHeight.icon,
-                    meteo: forecastHour.waveHeight.meteo,
-                    noaa: forecastHour.waveHeight.noaa,
-                    sg: forecastHour.waveHeight.sg,
+                    noaa: forecastHour.airTemperature.noaa,
+                    sg: forecastHour.airTemperature.sg,
                 })
             })
 
