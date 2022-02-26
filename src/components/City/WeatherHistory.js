@@ -85,11 +85,11 @@ export const WeatherHistory = () => {
     };
 
     const labels = weatherHistoryData.length && weatherHistoryData[0].hour.map((h) => {
-        
-        let hourData = h.time.split(" ")[1].slice(0,2)
 
-        if (hourData[0] === "0"){
-            hourData = hourData[1]
+        let hourData = h.time.split(" ")[1].slice(0, 2) + "h"
+
+        if (hourData[0] === "0") {
+            hourData = hourData[1] + "h"
         }
 
         return hourData;
@@ -116,12 +116,12 @@ export const WeatherHistory = () => {
             {weatherHistoryData.length !== 0 ? <>
                 <Line options={options} data={data} />
                 <div>
-                        <iframe
-                            style={{ borderRadius: "8px", marginBottom: "20px", marginTop: "23px", width: "45vw", height: "40vh" }}
-                            loading="lazy"
-                            allowFullScreen
-                            src={`https://www.google.com/maps/embed/v1/place?key=AIzaSyB5pePeSlLHqQG5PP8hnLP_VRbd9P48s0c&q=${id}`}>
-                        </iframe>
+                    <iframe
+                        style={{ borderRadius: "8px", marginBottom: "20px", marginTop: "23px", width: "45vw", height: "40vh" }}
+                        loading="lazy"
+                        allowFullScreen
+                        src={`https://www.google.com/maps/embed/v1/place?key=AIzaSyB5pePeSlLHqQG5PP8hnLP_VRbd9P48s0c&q=${id}`}>
+                    </iframe>
                 </div>
             </> : null
             }
