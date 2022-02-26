@@ -1,7 +1,6 @@
 import "./CurrentWeather.css"
 
-
-export const CardCities = ({ cityData }) => {
+export const CardCities = ({ cityData}) => {
 
 
     return (
