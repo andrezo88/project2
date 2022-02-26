@@ -24,7 +24,13 @@ export const NavBar = ({ onChange, id, searchButtonActive, endPoint, returnButto
     }, [id])
 
     return (
-        <div style={{ backgroundColor: "#F5F5F5" }}>
+        <div style={{
+            backgroundColor: "#F5F5F5",
+            overflow: "hidden",
+            position: "fixed",
+            top: "0px",
+            width: "100vw",
+        }}>
 
             <>
                 <div className="main-Nav">

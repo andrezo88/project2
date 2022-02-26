@@ -8,7 +8,7 @@ export const CurrentWeather = () => {
 
     const { id } = useParams();
     const [cityData, setCityData] = useState({})
-    
+
 
     useEffect(() => {
 
@@ -22,7 +22,7 @@ export const CurrentWeather = () => {
                 console.log(error.response)
             }
         }
-        
+
         if ((id !== "")) {
             getCity()
         }
@@ -35,16 +35,16 @@ export const CurrentWeather = () => {
 
                 <>
 
-                    <div className="main-current-weather">
+                    <div className="main-current-weather" style={{ marginTop: "150px" }}>
                         <div className="temp">
                             <div>
                                 <div className="weather-condition">
                                     <div className="weather-condition-2nd-layer">
-                                        {cityData.current && 
-                                        <>
-                                        <img src={cityData.current.condition.icon} style={{width:"60px"}}alt="icon weather" />
-                                        <h5>{cityData.current.condition.text}</h5>
-                                        </>
+                                        {cityData.current &&
+                                            <>
+                                                <img src={cityData.current.condition.icon} style={{ width: "60px" }} alt="icon weather" />
+                                                <h5>{cityData.current.condition.text}</h5>
+                                            </>
                                         }
                                     </div>
                                     <div>
@@ -63,7 +63,7 @@ export const CurrentWeather = () => {
                         <div className="city-info">
                             <h1>{cityData.location && cityData.location.name}</h1>
                             <h3>{cityData.location && cityData.location.country}</h3>
-{/*                         <Link to={`/weather-details/${id}`}>
+                            {/*                         <Link to={`/weather-details/${id}`}>
                                 <h6>Weather Details</h6>
                             </Link> */}
                         </div>
@@ -71,7 +71,7 @@ export const CurrentWeather = () => {
 
                 </>
                 :
-                <div style={{display:"flex",justifyContent:"center"}}>
+                <div style={{ display: "flex", justifyContent: "center" }}>
                     <ErrorPage />
                 </div>
             }

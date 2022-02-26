@@ -18,7 +18,11 @@ export const HomePage = () => {
     return (
         <>
 
-            <div>
+            <div
+                style={{
+                    marginTop: "150px"
+                }}
+            >
 
             </div>
             <div className="container-fluid">

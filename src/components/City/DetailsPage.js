@@ -9,7 +9,7 @@ import "./DetailsPage.css"
 export const CityDetails = () => {
 
     const [city, setCity] = useState("")
-    
+
 
     const handleChange = (e) => {
         (e && setCity(e.target.value))
@@ -17,23 +17,31 @@ export const CityDetails = () => {
 
     return (
         <div>
+            <div>
+                <NavBar onChange={handleChange} id={city} endPoint="city-details" searchButtonActive
+                    style={{
+                        overflow: "hidden",
+                        position: "fixed",
+                        top: "0px",
+                        width: "100vw",
+                    }}
+                />
+            </div>
 
-            <NavBar onChange={handleChange} id={city} endPoint="city-details" searchButtonActive />
             <div className='table-orientation'>
                 <div className='main-details'>
-                    
                     <div>
                         <CurrentWeather />
                     </div>
-                    
+
                     <div className='forecast-weather'>
                         <ForecastWeather />
                     </div>
 
-                    <div style={{marginBottom: "100px", marginTop: "23px", width: "45vw", height: "40vh" }}>
+                    <div style={{ marginBottom: "100px", marginTop: "23px", width: "45vw", height: "40vh" }}>
                         <WeatherHistory />
                     </div>
-                    
+
                 </div>
 
                 <div>
@@ -46,6 +54,6 @@ export const CityDetails = () => {
                 <p className="rodape">IO FORECAST V.1 - DESENVOLVIDO POR ANDRÉ AUGUSTO E LUCAS SALOMÃO</p>
             </div>
 
-        </div>
+        </div >
     )
 }

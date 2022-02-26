@@ -9,14 +9,14 @@
     align-items: center;
     justify-content: center;
     background-image: linear-gradient(white, aliceblue);
-    margin-top: 3vh;
+    margin-top: 40vh;
     margin-bottom: 0px;
 }
 
 .main-details {
     display: flex;
     flex-direction: column;
-    margin-left:13vw;
+    margin-left: 27vw;
 }
 
 .table-orientation {

@@ -44,7 +44,7 @@ export const ListCities = () => {
                     <tbody>
                         {cityData.map((city) => {
                             return (
-                                <CardCities key={uuidv4()} cityData={city}/>
+                                <CardCities key={uuidv4()} cityData={city} />
                             )
                         })
                         }
@@ -52,7 +52,6 @@ export const ListCities = () => {
 
                 </table>
             </div>
-
         </>
     )
 }
