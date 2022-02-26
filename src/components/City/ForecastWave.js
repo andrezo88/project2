@@ -7,24 +7,45 @@ export const ForecastWave = ( geographicData ) => {
 
     const { id } = useParams();
     const [waveForecastData, setWaveForecastData] = useState("");
+    const [geographicLocation, setGeographicLocation] = useState([]);
 
     useEffect(() => {
 
-        setWaveForecastData("")
-
-        const getForecast = async (id) => {
+        const getGeographic = async () => {
             try {
-                const data = await getAPI.getForecastWaveData(id)
+                const data = await getAPI.getWeatherRealData(id)
+                setGeographicLocation([data.location.lat, data.location.lon])
+            } catch (error) {
+                console.log(error.response)
+            }
+        }
+
+        if ((id !== "")) {
+            getGeographic()
+        }
+
+    }, [id])
+
+    useEffect(() => {
+
+        const getForecast = async () => {
+            try {
+                const data = await getAPI.getForecastWaveData(geographicLocation)
+                console.log(data)
                 setWaveForecastData(data)
+                console.log(waveForecastData)
             } catch (error) {
                 throw "Erro no Get WAVE"
             }
         }
-        if ((id !== "")) {
+
+        if ((geographicLocation.length !== 0)) {
             getForecast()
         }
 
-    }, [id])
+    }, [geographicLocation])
+
+
 
     return (
         <>

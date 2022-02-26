@@ -1,13 +1,14 @@
 import { useState, useEffect } from "react"
 import getAPI from "../GetAPI";
-import { useParams, Link } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { ErrorPage } from "./ErrorPage";
 import "./CurrentWeather.css"
 
-export const CurrentWeather = ({ geographic }) => {
+export const CurrentWeather = () => {
 
     const { id } = useParams();
-    const [cityData, setCityData] = useState({});
+    const [cityData, setCityData] = useState({})
+    
 
     useEffect(() => {
 
@@ -16,7 +17,6 @@ export const CurrentWeather = ({ geographic }) => {
         const getCity = async () => {
             try {
                 const data = await getAPI.getWeatherRealData(id)
-                geographic([data.location.lat, data.location.lon])
                 setCityData(data)
             } catch (error) {
                 console.log(error.response)
@@ -63,9 +63,9 @@ export const CurrentWeather = ({ geographic }) => {
                         <div className="city-info">
                             <h1>{cityData.location && cityData.location.name}</h1>
                             <h3>{cityData.location && cityData.location.country}</h3>
-                            <Link to={`/weather-details/${id}`}>
+{/*                         <Link to={`/weather-details/${id}`}>
                                 <h6>Weather Details</h6>
-                            </Link>
+                            </Link> */}
                         </div>
                     </div>
 

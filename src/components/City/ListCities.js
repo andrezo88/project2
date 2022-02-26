@@ -21,6 +21,7 @@ export const ListCities = () => {
         }
     }, [id])
 
+
     return (
         <>
             <div className="compare-cities">
