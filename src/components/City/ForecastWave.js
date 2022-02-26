@@ -1,17 +1,24 @@
 import { useState, useEffect } from "react"
 import getAPI from "../GetAPI";
-import { useParams, Link } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { v4 as uuidv4 } from 'uuid';
 
-export const ForecastWave = () => {
+export const ForecastWave = ( geographicData ) => {
 
     const { id } = useParams();
     const [waveForecastData, setWaveForecastData] = useState("");
 
     useEffect(() => {
-        const getForecast = async () => {
-            const data = await getAPI.getForecastWaveData(45.523064, -122.676483)
-            setWaveForecastData(data)
+
+        setWaveForecastData("")
+
+        const getForecast = async (id) => {
+            try {
+                const data = await getAPI.getForecastWaveData(id)
+                setWaveForecastData(data)
+            } catch (error) {
+                throw "Erro no Get WAVE"
+            }
         }
         if ((id !== "")) {
             getForecast()
@@ -19,29 +26,40 @@ export const ForecastWave = () => {
 
     }, [id])
 
-
     return (
         <>
             {waveForecastData ?
                 <>
-                    <Link to={`/wave-details/${id}`}>
-                        <span>Wave Details</span>
-                    </Link>
+                    <section style={{overflowY:"scroll", height:"150vh"}}>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>hour</th>
+                                    <th>mt</th>
+                                    <th>noaa</th>
+                                    <th>sg</th>
+                                    <th>IC</th>
+                                </tr>
+                            </thead>
 
-                    {waveForecastData.map((forecasthour) => {
-                        return (
-                            <div key={uuidv4()}>
-                                <div className="justify-content-md-center">
-                                    Hr: {forecasthour.time} _
-                                    Mt: {forecasthour.meteo} _
-                                    Noaa: {forecasthour.noaa} _
-                                    Sg: {forecasthour.sg} _
-                                    Ic: {forecasthour.icon} _
-                                </div>
+                            <tbody>
+                                {waveForecastData.map((forecasthour) => {
+                                    return (
+                                        <tr key={uuidv4()}>
+                                            <td>{forecasthour.time}</td>
+                                            <td>{forecasthour.meteo}</td>
+                                            <td>{forecasthour.noaa}</td>
+                                            <td>{forecasthour.sg}</td>
+                                            <td>{forecasthour.icon}</td>
+                                        </tr>
+                                    )
+                                })}
+                            </tbody>
+                        </table>
+                    </section>
 
-                            </div>
-                        )
-                    })}
+
+                    
 
                 </> : null
 

@@ -2,6 +2,7 @@ import React from 'react';
 import { useState, useEffect } from "react";
 import getAPI from "../GetAPI";
 import { useParams } from 'react-router-dom';
+import "./DetailsPage.css"
 
 import {
     Chart as ChartJS,
@@ -40,7 +41,7 @@ export const WeatherHistory = () => {
                 const data = await getAPI.getHourWeatherRealData(id)
                 setWeatherHistoryData(data)
             } catch (error) {
-                console.log(error.response)
+                throw "Erro no get forecast no gráfico"
             }
         }
         if ((id !== "")) {
@@ -77,14 +78,21 @@ export const WeatherHistory = () => {
                 display: true,
                 text: 'Hourly Forecast',
                 font: {
-                    size: 100
+                    size: 30
                 }
             },
         },
     };
 
     const labels = weatherHistoryData.length && weatherHistoryData[0].hour.map((h) => {
-        return h.time.split(" ")[1];
+        
+        let hourData = h.time.split(" ")[1].slice(0,2)
+
+        if (hourData[0] === "0"){
+            hourData = hourData[1]
+        }
+
+        return hourData;
     });
 
     const data = {
@@ -107,6 +115,14 @@ export const WeatherHistory = () => {
 
             {weatherHistoryData.length !== 0 ? <>
                 <Line options={options} data={data} />
+                <div>
+                        <iframe
+                            style={{ borderRadius: "8px", marginBottom: "20px", marginTop: "23px", width: "45vw", height: "40vh" }}
+                            loading="lazy"
+                            allowFullScreen
+                            src={`https://www.google.com/maps/embed/v1/place?key=AIzaSyB5pePeSlLHqQG5PP8hnLP_VRbd9P48s0c&q=${id}`}>
+                        </iframe>
+                </div>
             </> : null
             }
 

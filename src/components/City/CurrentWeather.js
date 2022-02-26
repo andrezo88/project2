@@ -1,16 +1,10 @@
 import { useState, useEffect } from "react"
 import getAPI from "../GetAPI";
-import cityIcon from "../images/cityIcon.svg"
-import tempIcon from "../images/tempIcon.png"
-import humidityIcon from "../images/humidityIcon.png"
-import sunriseIcon from "../images/sunriseIcon.jpg"
-import sunsetIcon from "../images/sunsetIcon.jpg"
-import earthIcon from "../images/earthIcon.png"
 import { useParams, Link } from "react-router-dom";
 import { ErrorPage } from "./ErrorPage";
 import "./CurrentWeather.css"
 
-export const CurrentWeather = ({ setError }) => {
+export const CurrentWeather = ({ geographic }) => {
 
     const { id } = useParams();
     const [cityData, setCityData] = useState({});
@@ -22,14 +16,17 @@ export const CurrentWeather = ({ setError }) => {
         const getCity = async () => {
             try {
                 const data = await getAPI.getWeatherRealData(id)
+                geographic([data.location.lat, data.location.lon])
                 setCityData(data)
             } catch (error) {
                 console.log(error.response)
             }
         }
+        
         if ((id !== "")) {
             getCity()
         }
+
     }, [id])
 
     return (
@@ -43,8 +40,12 @@ export const CurrentWeather = ({ setError }) => {
                             <div>
                                 <div className="weather-condition">
                                     <div className="weather-condition-2nd-layer">
-                                        {cityData.current && <img src={cityData.current.condition.icon} alt="icon weather" className="marginRight" />}
-                                        <h3>{cityData.current && cityData.current.condition.text}</h3>
+                                        {cityData.current && 
+                                        <>
+                                        <img src={cityData.current.condition.icon} style={{width:"60px"}}alt="icon weather" />
+                                        <h5>{cityData.current.condition.text}</h5>
+                                        </>
+                                        }
                                     </div>
                                     <div>
                                         <h1>{cityData.current && cityData.current.temp_c} ºC</h1>
@@ -68,20 +69,10 @@ export const CurrentWeather = ({ setError }) => {
                         </div>
                     </div>
 
-
-                    {/*<img src={earthIcon} alt="cityIcon" style={{ width: "40px" }} className=" marginRight" />
-                    <img src={cityIcon} alt="cityIcon" style={{ width: "40px" }} className=" marginRight" />
-                    <img src={tempIcon} alt="tempIcon" style={{ width: "20px" }} className="marginRight" />
-                    <img src={humidityIcon} alt="humidityIcon" style={{ width: "40px" }} className="marginRight" />
-                    <img src={sunriseIcon} alt="sunriseIcon" style={{ width: "40px" }} className="marginRight" />
-                    <img src={tempIcon} alt="tempIcon" style={{ width: "20px" }} className="marginRight" />
-                    <img src={sunsetIcon} alt="sunsetIcon" style={{ width: "40px" }} className="marginRight" /> */}
-
                 </>
                 :
-                <div style={{ marginLeft: "-200px" }}>
+                <div style={{display:"flex",justifyContent:"center"}}>
                     <ErrorPage />
-                    <div></div>
                 </div>
             }
         </>

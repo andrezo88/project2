@@ -27,14 +27,14 @@ export const HomePage = () => {
                 <div className="d-flex justify-content-center">
                     <div>
                         <Link to={city && `/city-details/${city}`} >
-                            <button className="btn btn-outline-dark mt-5" type="button" disabled={!city}>
+                            <button className="btn btn-outline-dark mt-5" style={{ marginLeft: "20px", borderWidth: "0px", border: "none" }} type="button" disabled={!city}>
                                 City Weather
                             </button>
                         </Link>
                     </div>
                     <div>
                         <Link to={city && `/favorite-cities/${city}`} >
-                            <button className="btn btn-outline-dark mt-5 ms-5" type="button" disabled={!city}>
+                            <button className="btn btn-outline-dark mt-5 ms-5" style={{ marginLeft: "20px", borderWidth: "0px", border: "none" }} type="button" disabled={!city}>
                                 Compare Cities
                             </button>
                         </Link>

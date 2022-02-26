@@ -39,8 +39,8 @@ export const NavBar = ({ onChange, id, searchButtonActive, endPoint, returnButto
                             <input
                                 type="text"
                                 className="form-control "
-                                placeholder="Type City name"
-                                aria-label="Type city name"
+                                placeholder="Type location name"
+                                aria-label="Type location name"
                                 aria-describedby="basic-addon2"
                                 onChange={onChange} value={id}
                                 onKeyPress={handleEnterKeyPress}

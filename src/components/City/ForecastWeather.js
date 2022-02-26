@@ -4,7 +4,7 @@ import sunriseIcon from "../images/sunriseicon.svg";
 import sunsetIcon from "../images/sunseticon.svg";
 import upIcon from "../images/up-icon.svg";
 import downIcon from "../images/down-icon.svg";
-import { useParams, Link } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { v4 as uuidv4 } from 'uuid';
 import "./ForecastWeather.css"
 
@@ -41,8 +41,8 @@ export const ForecastWeather = () => {
                             <div className="main-forecast-weather-card" key={uuidv4()}>
                                 <div className="first-info">
                                     <img src={forecastDay.icon} alt="icon-1st-date-forecast" />
-                                    <span className="dia">{forecastDay.date.slice(8,10)} / </span>
-                                    <span className="dia">{forecastDay.date.slice(5,7)}</span>
+                                    <span className="dia">{forecastDay.date.slice(8,10)}/</span>
+                                    <span className="dia">{forecastDay.date.slice(5,7)} </span>
                                 </div>
                                 <div>
                                     <img src={upIcon} alt="maxtempIcon" style={{ width: "30px" }}/> Max Temp: {forecastDay.maxtemp_c} ºC

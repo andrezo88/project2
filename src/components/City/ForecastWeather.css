@@ -3,21 +3,25 @@
     align-items: center;
     flex-direction: column;
     background-color: #93D5FF;
-    width: 9vw;
+    width: 9.6vw;
     border-radius: 10px;
     margin-right: 45px;
+    margin-left: 45px
 }
 
 .main-forecast-weather-card:hover {
     background-image: linear-gradient(to right, #93D5FF, #91EAE4);
+    opacity: 0.8;
 }
 
 .main-forecast-weather-card > div {
     margin: 3px 5px 5px 5px;
     text-align: left;
     font-size: 1.75vh;
-    color: white;
-    font-weight: 450;
+    font-weight: 400;
+    display: flex;
+    justify-content: left;
+    align-items: center;
 }
 
 .first-info {
