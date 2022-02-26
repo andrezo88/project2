@@ -3,11 +3,12 @@ import getAPI from "../GetAPI";
 import { useParams } from "react-router-dom";
 import { v4 as uuidv4 } from 'uuid';
 
-export const ForecastWave = ( geographicData ) => {
+export const ForecastWave = () => {
 
     const { id } = useParams();
     const [waveForecastData, setWaveForecastData] = useState("");
     const [geographicLocation, setGeographicLocation] = useState([]);
+    const [errorReturn,setError] = useState(false);
 
     useEffect(() => {
 
@@ -31,9 +32,7 @@ export const ForecastWave = ( geographicData ) => {
         const getForecast = async () => {
             try {
                 const data = await getAPI.getForecastWaveData(geographicLocation)
-                console.log(data)
                 setWaveForecastData(data)
-                console.log(waveForecastData)
             } catch (error) {
                 throw "Erro no Get WAVE"
             }
@@ -41,7 +40,13 @@ export const ForecastWave = ( geographicData ) => {
 
         if ((geographicLocation.length !== 0)) {
             getForecast()
+/*             if (geographicLocation[0] === geographicLocation[0]) {
+                setError(true)
+            } else {
+                setError(false)
+            } */
         }
+
 
     }, [geographicLocation])
 
@@ -49,17 +54,15 @@ export const ForecastWave = ( geographicData ) => {
 
     return (
         <>
-            {waveForecastData ?
+            {!errorReturn ?
                 <>
-                    <section style={{overflowY:"scroll", height:"150vh"}}>
+                    <section style={{overflowY:"scroll", height:"160vh"}}>
                         <table>
                             <thead>
                                 <tr>
                                     <th>hour</th>
-                                    <th>mt</th>
                                     <th>noaa</th>
                                     <th>sg</th>
-                                    <th>IC</th>
                                 </tr>
                             </thead>
 
@@ -68,19 +71,14 @@ export const ForecastWave = ( geographicData ) => {
                                     return (
                                         <tr key={uuidv4()}>
                                             <td>{forecasthour.time}</td>
-                                            <td>{forecasthour.meteo}</td>
                                             <td>{forecasthour.noaa}</td>
                                             <td>{forecasthour.sg}</td>
-                                            <td>{forecasthour.icon}</td>
                                         </tr>
                                     )
                                 })}
                             </tbody>
                         </table>
-                    </section>
-
-
-                    
+                    </section>                    
 
                 </> : null
 

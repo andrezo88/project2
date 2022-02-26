@@ -18,7 +18,6 @@ export const CardCities = ({ cityData}) => {
                         <td>{cityData && cityData.forecast.forecastday[0].astro.sunrise}</td>
                         <td>{cityData && cityData.forecast.forecastday[0].astro.sunset}</td>
                     </tr>
-
                 
                 </> : null
             }

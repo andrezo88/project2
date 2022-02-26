@@ -29,13 +29,18 @@ export const CurrentWeather = () => {
 
     }, [id])
 
+
     return (
         <>
             {cityData.location ?
 
                 <>
 
-                    <div className="main-current-weather" style={{ marginTop: "150px" }}>
+                    <div style={{ marginLeft: "255px", marginBottom: "12px" }}>
+                        <h3 style={{ fontWeight: "600" }} >Current Weather </h3>
+                    </div>
+
+                    <div className="main-current-weather">
                         <div className="temp">
                             <div>
                                 <div className="weather-condition">
@@ -63,9 +68,6 @@ export const CurrentWeather = () => {
                         <div className="city-info">
                             <h1>{cityData.location && cityData.location.name}</h1>
                             <h3>{cityData.location && cityData.location.country}</h3>
-                            {/*                         <Link to={`/weather-details/${id}`}>
-                                <h6>Weather Details</h6>
-                            </Link> */}
                         </div>
                     </div>
 
